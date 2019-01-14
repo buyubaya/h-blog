@@ -1,7 +1,11 @@
 .eventList {
-    .eventCard {
-        background: #fff;
-        padding: 20px;
-        border: 1px solid #ccc;
+    .eventItem {
+        &:nth-child(2n + 1) {
+            margin-right: calc(50% + 50px);
+        }
+
+        &:nth-child(2n) {
+            margin-left: calc(50% + 50px);
+        }
     }
 }

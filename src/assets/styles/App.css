@@ -1042,8 +1042,6 @@ table {
   box-shadow: 0 4px 12px 0 rgba(27, 169, 76, 0.5); }
 
 .cardItem {
-  width: calc(33.33% - 40px/3);
-  margin-bottom: 20px;
   background: #fff;
   border: none;
   box-shadow: 0 3px 8px 0 rgba(115, 143, 147, 0.4);
@@ -1654,8 +1652,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
+  .cardList .cardItem {
+    width: calc(33.33% - 40px/3);
+    margin-bottom: 20px; }
 
-.eventList .eventCard {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ccc; }
+.eventList .eventItem:nth-child(2n + 1) {
+  margin-right: calc(50% + 50px); }
+
+.eventList .eventItem:nth-child(2n) {
+  margin-left: calc(50% + 50px); }

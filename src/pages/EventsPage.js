@@ -25,27 +25,29 @@ class EventsPage extends React.Component {
         ];
 
         return(
-            <div>
+            <div className='events-page'>
                 <h1>HELLO EVENTS</h1>
-                <ul className='eventList'>
-                    {
-                        events.map((item, index) => 
-                            <li className='eventItem'>
-                                <div className='eventTime'>
-                                    {item.eventTime}
-                                </div>
-                                <div className='eventCard'>
-                                    <h3 className='eventLocation'>
-                                        {item.eventLocation}
-                                    </h3>
-                                    <p>
-                                        {item.eventShortDescription}
-                                    </p>
-                                </div>
-                            </li> 
-                        )
-                    }
-                </ul>
+                <section className='section'>
+                    <ul className='eventList'>
+                        {
+                            events.map((item, index) => 
+                                <li className='eventItem'>
+                                    <div className='eventCard cardItem'>
+                                        <div className='eventTime'>
+                                            {item.eventTime}
+                                        </div>
+                                        <h3 className='eventLocation'>
+                                            {item.eventLocation}
+                                        </h3>
+                                        <p>
+                                            {item.eventShortDescription}
+                                        </p>
+                                    </div>
+                                </li> 
+                            )
+                        }
+                    </ul>
+                </section>
             </div>
         );
     }
