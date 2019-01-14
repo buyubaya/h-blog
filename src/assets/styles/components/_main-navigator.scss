@@ -1,0 +1,44 @@
+.mainNav-area {
+    background: map-get($palette, dark);
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .logo-H {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .mainNav {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+
+        .navItem {
+            display: inline-block;
+            vertical-align: middle;
+    
+            a {
+                color: #b7c9cc;
+                font-weight: bold;
+                padding-left: 20px;
+                padding-right: 2px;
+                text-decoration: none;
+            }
+
+            &.is-active {
+                position: relative;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    height: 5px;
+                    background: map-get($palette, primary);
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

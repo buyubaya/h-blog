@@ -1,0 +1,17 @@
+.#{$tuci}-inputGroup {
+    .ant-alert {
+        display: inline-block;
+        padding: $tuci-input-alert-padding-y $tuci-input-alert-padding-x !important;
+        border-radius: $tuci-input-border-radius !important;
+        font-size: 0.9em;
+        color: $tuci-input-error-color;
+    }
+}
+
+.ant-input {
+    border-radius: $tuci-input-border-radius !important;
+}
+
+.ant-btn {
+    border-radius: $tuci-input-border-radius !important;
+}

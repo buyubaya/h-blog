@@ -1,0 +1,19 @@
+body {
+    font-size: 14px;
+    color: $text-color !important;
+}
+
+.pageHeader {
+    background: linear-gradient(135deg,#193b84 15%,#037bc1);
+    padding: 20px;
+
+    .pageTitle {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.section {
+    padding: 20px 20px 0 20px;
+}

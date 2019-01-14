@@ -1,0 +1,207 @@
+.bg-primary {
+    background: map-get($palette, primary) !important;
+}
+
+.bg-error {
+    background: map-get($palette, error) !important;
+}
+
+.bg-success {
+    background: map-get($palette, success) !important;
+}
+
+
+/********** SPACE **********/
+@for $i from 0 through 10 {
+	.p#{$i*5} {
+		padding: $i*5px !important;	
+	}
+	.pt#{$i*5} {
+		padding-top: $i*5px !important;	
+	}
+	.pr#{$i*5} {
+		padding-right: $i*5px !important;	
+	}
+	.pb#{$i*5} {
+		padding-bottom: $i*5px !important;	
+	}
+	.pl#{$i*5} {
+		padding-left: $i*5px !important;	
+	}
+	.m#{$i*5} {
+		margin: $i*5px !important;	
+	}
+	.mt#{$i*5} {
+		margin-top: $i*5px !important;	
+	}
+	.mr#{$i*5} {
+		margin-right: $i*5px !important;	
+	}
+	.mb#{$i*5} {
+		margin-bottom: $i*5px !important;	
+	}
+	.ml#{$i*5} {
+		margin-left: $i*5px !important;	
+	}
+}
+
+
+/********** TEXT **********/
+.lh1 {
+	line-height: 1;
+}
+.text-bold {
+	font-weight: bold !important;
+}
+.text-italic {
+	font-style: italic !important;
+}
+.text-underline {
+	text-decoration: underline;
+}
+.text-remove {
+	text-decoration: line-through;
+}
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+.text-camelcase {
+	text-transform: capitalize !important;
+}
+.text-left {
+	text-align: left !important;
+}
+.text-right {
+	text-align: right !important;
+}
+.text-center {
+	text-align: center !important;
+}
+.align-middle {
+	vertical-align: middle;
+}
+.align-top {
+	vertical-align: top;
+}
+.align-bottom {
+	vertical-align: bottom;
+}
+
+
+/********** OVERFLOW **********/
+.ovf-h {
+	overflow: hidden;
+}
+.ovf-x {
+	overflow-x: auto;
+}
+.ovf-y {
+	overflow-y: auto;
+}
+
+
+/********** POSITION **********/
+.pos-rel {
+	position: relative;
+}
+.pos-abs {
+	position: absolute;
+}
+.pos-center {
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%,-50%);	
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.pos-center-x {
+	left: 50%;
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.pos-center-y {
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.m0auto {
+	margin: 0 auto;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+
+
+/********** OTHER **********/
+.d-block {
+	display: block;
+}
+.d-inline {
+	display: inline;
+}
+.d-inline-block {
+	display: inline-block;
+}
+.d-table {
+	display: table;
+}
+.d-cell {
+	display: table-cell;
+}
+.w100p {
+	width: 100%;
+}
+.h100p {
+	height: 100%;
+}
+.maxw100p {
+	max-width: 100%;
+}
+.maxh100p {
+	max-height: 100%;
+}
+@for $i from 1 through 10 {
+	.cell-#{$i*50} {
+		min-width: $i*50px;
+		max-width: $i*50px;
+	}	
+}
+.list-decimal>li {
+	list-style: decimal inside;
+}
+
+
+/********** DISPLAY **********/
+@mixin hide($device,$width){
+	$device1: $device;
+	$device2: $device;
+	@media screen and (min-width: #{$width}px) {
+		@if ($device != '') {
+			$device1: "-from-#{$device}";
+		}
+		@for $i from 1 through 12 {
+			.hide#{$device1} {
+				display: none;
+			}
+		}
+	}
+	@media screen and (max-width: #{$width - 1}px) {
+		$device2: "-#{$device}";
+		@for $i from 1 through 12 {
+			.hide#{$device2} {
+				display: none;
+			}
+		}
+	}
+}
+@each $device,$width in $breakpoints {
+	@include hide($device,$width);
+}

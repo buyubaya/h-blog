@@ -1,0 +1,33 @@
+$tuci: tuci;
+
+
+/******************** GRID ********************/
+$breakpoints: ('xs': 320,'sm': 480,'md': 640,'lg': 768,'xl': 1024,'xxl': 1200);
+$colors: ('fff': #fff,'1': #ff9966);
+$texts: ('1': ('font-size': 1.5rem, 'line-height': 2), '2': ('font-size': 2rem, 'line-height': 1.5));
+
+
+/******************** COLOR ********************/
+$text-color: #738f93;
+$bg-primary: #09c;
+$tuci-bg-primary: #f3f7f7;
+
+
+/******************** FORM ********************/
+$input-height: 25px;
+$tuci-input-border-radius: 2px;
+$tuci-input-primary-color: #09c;
+$tuci-input-secondary-color: #f90;
+$tuci-input-error-color: #f5222d;
+$tuci-input-success-color: #0c6;
+
+$tuci-input-alert-padding-x: 10px;
+$tuci-input-alert-padding-y: 2px;
+
+$palette: (
+    primary: #1ba94c,
+    secondary: #f90,
+    error: #f5222d,
+    success: #0c6,
+    dark: #39424e
+);

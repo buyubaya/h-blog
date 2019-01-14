@@ -1,0 +1,12 @@
+.btn {
+    &.btn-default, &.btn-default:hover, &.btn-default:focus, &.btn-default:active {
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: capitalize;
+        background: map-get($palette, primary);
+        border-color: map-get($palette, primary);
+        box-shadow: 0 4px 12px 0 rgba(27, 169, 76, 0.5);
+    }
+}

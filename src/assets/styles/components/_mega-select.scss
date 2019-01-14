@@ -1,0 +1,108 @@
+body {
+	background: $bg-primary;
+}
+
+.box-megaSelect {	
+	max-width: 300px;
+	padding: 10px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	
+	.box-header {
+		border-bottom: 1px solid #ccc;
+		display: flex;
+		align-items: center;
+		
+		span {
+			width: 50%;
+			padding: 10px;
+			text-align: center;
+			text-transform: uppercase;
+			white-space: nowrap; 
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+		}
+
+		input[type='text'] {
+			width: 100%;
+		}
+
+		&.v02 {
+			background: lighten($bg-primary, 50%);
+
+			span {
+				width: 100%;
+			}
+		}
+	}
+
+	.megaSelect-options {
+		border-top: 2px solid $bg-primary;
+		border-bottom: 2px solid $bg-primary;
+	}
+
+	.box-row {
+		padding: 10px 0;
+	}
+	
+	ul {	
+		max-height: 220px;
+		overflow-y: auto;
+
+		&::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #e1e1e1; 
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $bg-primary; 
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: $bg-primary; 
+		}
+		
+		li {
+			border-bottom: 1px solid #ccc;
+			cursor: pointer;
+
+			&:last-child {
+				border-bottom: none;
+			}
+			
+			&:hover {
+				background: lighten($bg-primary, 50%);
+			}
+		}
+	}
+	
+	.option {		
+		display: flex;
+		align-items: center;
+		
+		span {
+			padding: 5px 10px;
+
+			&.icon {
+				padding: 10px;
+				color: $bg-primary;
+				text-align: center;
+			}
+
+			&:first-child {
+				width: 100%;
+				white-space: nowrap; 
+    			overflow: hidden;
+    			text-overflow: ellipsis;
+			}
+
+			input {
+				width: 100%;
+			}
+		}
+	}
+}

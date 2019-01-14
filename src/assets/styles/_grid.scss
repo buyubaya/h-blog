@@ -1,0 +1,86 @@
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+.row > .column {
+	float: left;
+	display: block;
+	width: 100%;
+}
+.list-inline {
+	font-size: 0;
+}
+.list-inline > .column {
+	float: none;
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	font-size: 1rem !important;
+}
+
+
+/********** GRID INLINE **********/
+@for $i from 1 through 12 {
+	.list-#{$i} > .column {
+		width: 100%/$i;
+		font-size: 0
+	}	
+}
+@mixin gridInline($device,$width) {
+	@if ($device != '') {
+		$device: "-#{$device}";
+		@media screen and (min-width: #{$width}px) {
+			@for $i from 1 through 12 {
+				.list-#{$i}#{$device} > .column {
+					width: 100%/$i;
+				}	
+			}
+		}
+	}
+}
+@each $device,$width in $breakpoints {
+	@include gridInline($device,$width);
+}
+/********** GRID FLOAT **********/
+@for $i from 1 through 12 {
+	.row > .column-#{$i} {
+		width: 100%*$i/12;
+	}	
+}
+@mixin gridFloat($device,$width) {
+	@if ($device != '') {
+		$device: "-#{$device}";
+		@media screen and (min-width: #{$width}px) {
+			@for $i from 1 through 12 {
+				.row > .column-#{$i}#{$device} {
+					width: 100%*$i/12;
+				}	
+			}
+		}
+	}
+}
+@each $device,$width in $breakpoints {
+	@include gridFloat($device,$width);
+}
+/********** WRAPPER **********/
+@mixin gridWrap($device,$width) {
+	@if ($device != '') {
+		$device: "-#{$device}";
+		.wrap#{$device} {
+			padding: 0 15px;
+		}
+		@media screen and (min-width: #{$width}px) {
+			.wrap#{$device} {
+				max-width: #{$width}px;
+				padding: 0;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+@each $device,$width in $breakpoints {
+	@include gridWrap($device,$width);
+}
