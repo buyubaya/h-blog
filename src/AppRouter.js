@@ -12,7 +12,7 @@ import Test from 'pages/Test';
 import PostListPage from 'pages/PostListPage';
 import EventsPage from 'pages/EventsPage';
 
-
+console.log('url', process.env.PUBLIC_URL);
 const AppRouter = () => (
 	<Router history={browserHistory}>
 		<Route path={process.env.PUBLIC_URL + '/'} component={MainLayout}>
