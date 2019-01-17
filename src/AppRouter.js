@@ -14,7 +14,7 @@ import EventsPage from 'pages/EventsPage';
 
 
 const AppRouter = () => (
-	<Router history={browserHistory}>
+	<Router history={browserHistory} basename='/h-blog'>
 		<Route path='/' component={MainLayout}>
 			<IndexRoute component={SamplePage} />
 			<Route path='/home' component={HomePage} />
