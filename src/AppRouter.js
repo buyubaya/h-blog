@@ -14,7 +14,7 @@ import EventsPage from 'pages/EventsPage';
 
 
 const AppRouter = () => (
-	<Router history={browserHistory}>
+	<Router history={browserHistory} basename={process.env.PUBLIC_URL}>
 		<Route path='/' component={MainLayout}>
 			<IndexRoute component={SamplePage} />
 			<Route path='/home' component={HomePage} />
