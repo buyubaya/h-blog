@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"homepage": "https://buyubaya.github.io/h-blog/",
+	"proxy": "https://buyubaya.github.io/h-blog/",
 	"dependencies": {
 		"antd": "^3.9.2",
 		"apollo-boost": "^0.1.15",
