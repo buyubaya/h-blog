@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router';
+import { BrowserRouter as Router, Switch, Route, IndexRoute, Redirect } from 'react-router-dom';
 
 // COMPONENTS
 import MainLayout from 'components/common/MainLayout';
@@ -14,8 +14,20 @@ import EventsPage from 'pages/EventsPage';
 
 
 const AppRouter = () => (
-	<Router history={browserHistory} basename={process.env.PUBLIC_URL}>
-		<Route path={'/'} component={MainLayout}>
+	<Router basename={process.env.PUBLIC_URL}>
+		<Switch>
+			<MainLayout>
+				<Route path='/' exact component={SamplePage} />
+				<Route path='/home' component={HomePage} />
+				<Route path='/tuci' component={TuciInputPage} />
+				<Route path='/login' component={LoginPage} />
+				<Route path='/test' component={Test} />
+				<Route path='/posts' component={PostListPage} />
+				<Route path='/events' component={EventsPage} />
+				<Route path='/not-found' component={Page404} />
+			</MainLayout>
+		</Switch>
+		{/* <Route path={'/'} component={MainLayout}>
 			<IndexRoute component={SamplePage} />
 			<Route path='/home' component={HomePage} />
 			<Route path='/tuci' component={TuciInputPage} />
@@ -25,7 +37,7 @@ const AppRouter = () => (
 			<Route path='/events' component={EventsPage} />
 			<Route path='/not-found' component={Page404} />
 		</Route>
-		<Redirect from='*' to='/not-found' />
+		<Redirect from='*' to='/not-found' /> */}
 	</Router>
 );
 
