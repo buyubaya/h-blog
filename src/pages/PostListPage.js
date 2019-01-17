@@ -1,5 +1,6 @@
 import React from 'react';
-import { Breadcrumb, Skeleton, Button } from 'antd';
+import { Skeleton, Button } from 'antd';
+import MainBreadcrumb from 'components/common/MainBreadcrumb';
 
 
 class PostListPage extends React.Component {
@@ -25,18 +26,7 @@ class PostListPage extends React.Component {
 
         return(
             <div className='postList-container'>
-                <div className='breadcrumb-area'>
-                    <Breadcrumb>
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item><a href="">Application Center</a></Breadcrumb.Item>
-                        <Breadcrumb.Item><a href="">Application List</a></Breadcrumb.Item>
-                        <Breadcrumb.Item>An Application</Breadcrumb.Item>
-                    </Breadcrumb>
-                </div>
-
-                <div className='pageHeader'>
-                    <div className='pageTitle'>POSTS</div>
-                </div>
+                <MainBreadcrumb />
 
                 <section className='section'>
                     <div className='cardList'>

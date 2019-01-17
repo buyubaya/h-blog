@@ -1,4 +1,5 @@
 import React from 'react';
+import MainBreadcrumb from 'components/common/MainBreadcrumb';
 
 
 class EventsPage extends React.Component {   
@@ -26,22 +27,25 @@ class EventsPage extends React.Component {
 
         return(
             <div className='events-page'>
-                <h1>HELLO EVENTS</h1>
+                <MainBreadcrumb />
+                
                 <section className='section'>
                     <ul className='eventList'>
                         {
                             events.map((item, index) => 
-                                <li className='eventItem'>
-                                    <div className='eventCard cardItem'>
-                                        <div className='eventTime'>
-                                            {item.eventTime}
+                                <li className='eventRow clearfix' key={index}>
+                                    <div className='eventItem'>
+                                        <div className='eventCard cardItem'>
+                                            <div className='eventTime'>
+                                                {item.eventTime}
+                                            </div>
+                                            <h3 className='eventLocation text-bold'>
+                                                {item.eventLocation}
+                                            </h3>
+                                            <p>
+                                                {item.eventShortDescription}
+                                            </p>
                                         </div>
-                                        <h3 className='eventLocation'>
-                                            {item.eventLocation}
-                                        </h3>
-                                        <p>
-                                            {item.eventShortDescription}
-                                        </p>
                                     </div>
                                 </li> 
                             )

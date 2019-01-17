@@ -1,11 +1,122 @@
 .eventList {
-    .eventItem {
+    .eventRow {
+        position: relative;
+
         &:nth-child(2n + 1) {
             margin-right: calc(50% + 50px);
+
+            .eventItem {
+                float: right;
+
+                &:before {
+                    right: -52px;
+                }
+
+                &:after {
+                    right: -56px;
+                }
+            }
+
+            .eventCard {
+                border-right: 4px solid map-get($palette, dark);
+            }
+
+            @media (min-width: 768px) {
+                .eventTime {
+                    position: absolute;
+                    left: calc(100% + 65px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
 
         &:nth-child(2n) {
             margin-left: calc(50% + 50px);
+
+            .eventItem {
+                &:before {
+                    left: -52px;
+                }
+
+                &:after {
+                    left: -56px;
+                }
+            }
+
+            .eventCard {
+                border-left: 4px solid map-get($palette, dark);
+            }
+
+            @media (min-width: 768px) {
+                .eventTime {
+                    position: absolute;
+                    right: calc(100% + 65px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .eventItem {
+            width: 300px;
+            max-width: 100%;
+
+            .eventTime {
+                font-size: 0.9em;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 100%;
+                background: map-get($palette, dark);
+                position: absolute;
+                top: 0;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #fff;
+                border: 2px solid map-get($palette, primary);
+                position: absolute;
+                top: calc(50% - 6px);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 639px) {
+    .eventList {
+        .eventRow {
+            margin-left: 50px !important;
+            margin-right: 0 !important;
+            padding: 10px 0;
+
+            .eventItem {
+                float: none !important;
+
+                .eventCard {
+                    border: none;
+                    border-left: 4px solid map-get($palette, dark);
+                }
+
+                &:before {
+                    right: initial;
+                    left: -52px;
+                }
+
+                &:after {
+                    right: initial;
+                    left: -56px;
+                }
+            }
         }
     }
 }
