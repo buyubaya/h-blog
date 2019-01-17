@@ -2,6 +2,7 @@
 	"name": "react-test",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://buyubaya.github.io/h-blog/",
 	"dependencies": {
 		"antd": "^3.9.2",
 		"apollo-boost": "^0.1.15",
@@ -45,7 +46,9 @@
 		"start-js": "react-app-rewired start",
 		"start": "npm-run-all -p watch-css start-js",
 		"build-js": "react-app-rewired build",
-		"build": "npm-run-all build-css build-js"
+		"build": "npm-run-all build-css build-js",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"devDependencies": {
 		"babel-plugin-module-resolver": "^3.1.1",
