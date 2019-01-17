@@ -27,17 +27,6 @@ const AppRouter = () => (
 				<Route path='/not-found' component={Page404} />
 			</MainLayout>
 		</Switch>
-		{/* <Route path={'/'} component={MainLayout}>
-			<IndexRoute component={SamplePage} />
-			<Route path='/home' component={HomePage} />
-			<Route path='/tuci' component={TuciInputPage} />
-			<Route path='/login' component={LoginPage} />
-            <Route path='/test' component={Test} />
-			<Route path='/posts' component={PostListPage} />
-			<Route path='/events' component={EventsPage} />
-			<Route path='/not-found' component={Page404} />
-		</Route>
-		<Redirect from='*' to='/not-found' /> */}
 	</Router>
 );
 
