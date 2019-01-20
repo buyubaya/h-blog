@@ -24,6 +24,12 @@ class PostListPage extends React.Component {
             }
         ];
 
+        const styles = {
+            levelSpan: {
+                width: 100 * 0.5 * 3 + '%'
+            }
+        }
+
         return(
             <div className='postList-container'>
                 <MainBreadcrumb />
@@ -36,6 +42,11 @@ class PostListPage extends React.Component {
                                     <div className='cardBody'>
                                         <div className='cardInfo'>
                                             <h3 className='cardTitle'>{item.title}</h3>
+                                            <ul className='levelBar'>
+                                                <li><span style={styles.levelSpan}></span></li>
+                                                <li><span style={styles.levelSpan}></span></li>
+                                                <li><span style={styles.levelSpan}></span></li>
+                                            </ul>
                                             <p className='cardDescription'>{item.description}</p>
                                         </div>
                                         <Button className='btn btn-default'>See demo</Button>
