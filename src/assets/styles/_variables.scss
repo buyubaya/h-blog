@@ -26,6 +26,8 @@ $tuci-input-alert-padding-y: 2px;
 
 $palette: (
     primary: #1ba94c,
+    primary-light: lighten(#1ba94c, 30%),
+    primary-lightest: lighten(#1ba94c, 55%),
     secondary: #f90,
     error: #f5222d,
     success: #0c6,

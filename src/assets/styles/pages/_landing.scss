@@ -1,0 +1,58 @@
+body {
+    &.isLandingPage {
+        background: map-get($palette, primary-light) !important;
+        overflow: hidden;
+        position: relative;
+
+        #root {
+            height: 100%;
+        }
+
+        .mainLayout {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .landingPage-container {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }    
+        }
+
+        .avatar-area {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 15em;
+            height: 15em;
+            border-radius: 50%;
+            border: 4px solid map-get($palette, dark);
+            background: #fff;
+            padding: 35px;
+
+            .avatar-svg {
+                width: 100%;
+            }
+
+            #avatarRocket-svg, #avatarRocketBorder-svg, #avatarRocketFire-svg {
+                transform: translateY(-20px);
+            }
+        }
+
+        .avatarName {
+            font-size: 1.35em;
+            color: map-get($palette, dark);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .avatarTitle {
+            font-size: 1.5em;
+            color: map-get($palette, dark);
+        }
+    }
+}

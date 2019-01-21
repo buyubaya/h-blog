@@ -1600,6 +1600,44 @@ table {
     margin: 0 auto; } }
 
 /******************** PAGES ********************/
+body.isLandingPage {
+  background: #74e99c !important;
+  overflow: hidden;
+  position: relative; }
+  body.isLandingPage #root {
+    height: 100%; }
+  body.isLandingPage .mainLayout {
+    display: flex;
+    flex-direction: column;
+    height: 100%; }
+    body.isLandingPage .mainLayout .landingPage-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+  body.isLandingPage .avatar-area {
+    text-align: center; }
+  body.isLandingPage .avatar {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 4px solid #39424e;
+    background: #fff;
+    padding: 35px; }
+    body.isLandingPage .avatar .avatar-svg {
+      width: 100%; }
+    body.isLandingPage .avatar #avatarRocket-svg, body.isLandingPage .avatar #avatarRocketBorder-svg, body.isLandingPage .avatar #avatarRocketFire-svg {
+      transform: translateY(-20px); }
+  body.isLandingPage .avatarName {
+    font-size: 1.35em;
+    color: #39424e;
+    font-weight: bold;
+    margin: 20px 0; }
+  body.isLandingPage .avatarTitle {
+    font-size: 1.5em;
+    color: #39424e; }
+
 body {
   background: #f3f7f7 !important; }
 

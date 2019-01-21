@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, IndexRoute, Redirect } from 're
 
 // COMPONENTS
 import MainLayout from 'components/common/MainLayout';
+import LandingPage from 'pages/LandingPage';
 import SamplePage from 'pages/SamplePage';
 import TuciInputPage from 'pages/TuciInputPage';
 import HomePage from 'pages/HomePage';
@@ -17,7 +18,8 @@ const AppRouter = () => (
 	<Router basename={process.env.PUBLIC_URL}>
 		<Switch>
 			<MainLayout>
-				<Route path='/' exact component={SamplePage} />
+				<Route path='/' exact component={LandingPage} />
+				<Route path='/sample' exact component={SamplePage} />
 				<Route path='/home' component={HomePage} />
 				<Route path='/tuci' component={TuciInputPage} />
 				<Route path='/login' component={LoginPage} />

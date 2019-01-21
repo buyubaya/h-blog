@@ -3,7 +3,7 @@ import MainNavigator from 'components/common/MainNavigator';
 
 
 const MainLayout = ({ children }) => (
-    <div>
+    <div className='mainLayout'>
         <MainNavigator />
         {children}
     </div>
