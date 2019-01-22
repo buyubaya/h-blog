@@ -10,38 +10,32 @@ class AboutPage extends React.Component {
             skills: [
                 {
                     key: 'html',
-                    name: 'HTML',
-                    img: 'html-hero.png',
+                    name: 'HTML<br />CSS',
+                    img: 'hawkeye-face.png',
                     percent: 90
                 },
                 {
                     key: 'js',
-                    name: 'JS',
-                    img: 'js-hero.png',
+                    name: 'JS<br />Jquery',
+                    img: 'captain-face.png',
                     percent: 70
                 },
                 {
                     key: 'reactjs',
                     name: 'ReactJS',
-                    img: 'reactjs-hero.png',
+                    img: 'thor-face.png',
                     percent: 80
                 },
                 {
-                    key: 'angular',
-                    name: 'Angular',
-                    img: 'angular-hero.png',
-                    percent: 60
-                },
-                {
-                    key: 'vuejs',
-                    name: 'VueJS',
-                    img: 'vuejs-hero.png',
+                    key: 'angular_vuejs',
+                    name: 'Angular<br />VueJS',
+                    img: 'hulk-face.png',
                     percent: 60
                 },
                 {
                     key: 'nodejs',
                     name: 'NodeJS',
-                    img: 'nodejs-hero.png',
+                    img: 'ironman-face.png',
                     percent: 50
                 }
             ]
@@ -75,8 +69,8 @@ class AboutPage extends React.Component {
                             skills && skills.map((item, index) => (
                                 <div className='skill-group' key={item.key}>
                                     <div className='skill-svg'>
-                                        <div className='skill-name'>
-                                            {item.name}
+                                        <div className='skill-name' dangerouslySetInnerHTML={{__html: item.name}}>
+                                            
                                         </div>
                                         <svg viewBox="0 0 100 100">
                                             <circle className='circle-1' cx="50%" cy="50%" r="48" />
