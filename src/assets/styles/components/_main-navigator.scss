@@ -51,6 +51,7 @@
 }
 
 .ant-menu {
+    padding: 5px 0 !important;
     background: map-get($palette, dark) !important;
     border: none !important;
     overflow: hidden;

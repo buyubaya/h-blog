@@ -1069,6 +1069,7 @@ table {
   line-height: 1; }
 
 .ant-menu {
+  padding: 5px 0 !important;
   background: #39424e !important;
   border: none !important;
   overflow: hidden; }
@@ -1624,15 +1625,17 @@ body.isLandingPage {
       align-items: center;
       flex-direction: column; }
   body.isLandingPage .avatar-area {
-    text-align: center; }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   body.isLandingPage .avatar {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 5px solid #39424e;
     background: #fff;
-    padding: 35px;
-    margin: 0 auto; }
+    padding: 35px; }
     body.isLandingPage .avatar path {
       fill: #39424e; }
     body.isLandingPage .avatar .avatar-svg {
@@ -1699,21 +1702,73 @@ body.isLandingPage {
 
 @keyframes avatarTitle {
   0% {
-    letter-spacing: 10px;
+    transform: scaleX(2);
     opacity: 0; }
   100% {
-    letter-spacing: 1px;
+    transform: scaleX(1);
     opacity: 1; } }
 
-.skillArea .skillBar {
-  width: 100%;
-  height: 5px;
-  background: #ccc; }
-  .skillArea .skillBar > span {
-    display: block;
-    width: 50%;
+.skills-area {
+  width: 50%; }
+
+.skill-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 40px; }
+  .skill-group .skill-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    width: 5em;
+    height: 5em;
+    min-width: 5em;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    position: relative; }
+    .skill-group .skill-svg svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50%;
+      margin-left: -50%;
+      transform-origin: center;
+      transform: rotate(-90deg);
+      z-index: 100; }
+    .skill-group .skill-svg .circle-1, .skill-group .skill-svg .circle-2 {
+      fill: transparent;
+      stroke: #ccc;
+      stroke-width: 5; }
+    .skill-group .skill-svg .circle-2 {
+      stroke: #39424e;
+      stroke-dasharray: 314.159265359;
+      stroke-dashoffset: 314.159265359;
+      transition: stroke-dashoffset 2s; }
+  .skill-group .skill-bar {
+    display: table-cell;
+    width: 100%;
     height: 5px;
-    background: #1ba94c; }
+    background: #ccc;
+    position: relative;
+    z-index: 100; }
+    .skill-group .skill-bar > span {
+      display: block;
+      width: 0;
+      height: 5px;
+      background: #39424e;
+      position: relative;
+      transition: 2s; }
+      .skill-group .skill-bar > span .skill-icon {
+        display: block;
+        width: 2em;
+        position: absolute;
+        right: -1em;
+        top: calc(50% - 1em); }
 
 body {
   background: #f3f7f7 !important; }

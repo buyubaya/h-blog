@@ -24,6 +24,9 @@ body {
 
         .avatar-area {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .avatar {
@@ -33,7 +36,6 @@ body {
             border: 5px solid map-get($palette, dark);
             background: #fff;
             padding: 35px;
-            margin: 0 auto;
 
             path {
                 fill: map-get($palette, dark);
@@ -102,8 +104,8 @@ body {
         }
 
         @keyframes avatarTitle {
-            0% { letter-spacing: 10px; opacity: 0 }
-            100% { letter-spacing: 1px; opacity: 1 }
+            0% { transform: scaleX(2); opacity: 0 }
+            100% { transform: scaleX(1); opacity: 1 }
         }
     }
 }
