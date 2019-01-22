@@ -1,6 +1,14 @@
 {
-  "main.css": "static/css/main.ac26c9c8.css",
-  "main.css.map": "static/css/main.ac26c9c8.css.map",
-  "main.js": "static/js/main.f2fb2da1.js",
-  "main.js.map": "static/js/main.f2fb2da1.js.map"
+  "main.css": "static/css/main.d7cd51ed.css",
+  "main.css.map": "static/css/main.d7cd51ed.css.map",
+  "main.js": "static/js/main.87773fb3.js",
+  "main.js.map": "static/js/main.87773fb3.js.map",
+  "static\\media\\angular-hero.png": "static/media/angular-hero.2cd1ef33.png",
+  "static\\media\\css-hero.png": "static/media/css-hero.95f73b3a.png",
+  "static\\media\\html-hero.png": "static/media/html-hero.e72b0661.png",
+  "static\\media\\java-hero.png": "static/media/java-hero.fedce172.png",
+  "static\\media\\js-hero.png": "static/media/js-hero.c2646ed8.png",
+  "static\\media\\nodejs-hero.png": "static/media/nodejs-hero.2e3e7227.png",
+  "static\\media\\reactjs-hero.png": "static/media/reactjs-hero.7550bf32.png",
+  "static\\media\\vuejs-hero.png": "static/media/vuejs-hero.208f66f5.png"
 }
