@@ -1619,24 +1619,60 @@ body.isLandingPage {
   body.isLandingPage .avatar-area {
     text-align: center; }
   body.isLandingPage .avatar {
-    width: 15em;
-    height: 15em;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 4px solid #39424e;
+    border: 5px solid #39424e;
     background: #fff;
-    padding: 35px; }
+    padding: 35px;
+    margin: 0 auto; }
+    body.isLandingPage .avatar path {
+      fill: #39424e; }
     body.isLandingPage .avatar .avatar-svg {
       width: 100%; }
-    body.isLandingPage .avatar #avatarRocket-svg, body.isLandingPage .avatar #avatarRocketBorder-svg, body.isLandingPage .avatar #avatarRocketFire-svg {
-      transform: translateY(-20px); }
+    body.isLandingPage .avatar #avatarWheel.isActive {
+      transform-origin: 84.25% 16%;
+      animation: avatarWheel 10s linear infinite; }
+    body.isLandingPage .avatar #avatarCircle.isActive {
+      animation: avatarCircle 1s linear infinite alternate; }
+
+@keyframes avatarWheel {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes avatarCircle {
+  0% {
+    transform: translateY(0); }
+  20% {
+    transform: translateY(10%); }
+  40% {
+    transform: translateY(5%); }
+  60% {
+    transform: translateY(10%); }
+  80% {
+    transform: translateY(7%); }
+  100% {
+    transform: translateY(10%); } }
   body.isLandingPage .avatarName {
-    font-size: 1.35em;
+    font-size: 1.5em;
     color: #39424e;
     font-weight: bold;
-    margin: 20px 0; }
+    padding: 10px 20px;
+    width: 200px;
+    margin: 20px auto 0 auto;
+    background: #fff;
+    text-align: center;
+    border: 2px solid #39424e; }
   body.isLandingPage .avatarTitle {
-    font-size: 1.5em;
+    font-size: 3em;
+    font-weight: bold;
     color: #39424e; }
+    @media (max-width: 479px) {
+      body.isLandingPage .avatarTitle {
+        font-size: 2em;
+        margin-top: 20px; } }
 
 body {
   background: #f3f7f7 !important; }

@@ -27,32 +27,67 @@ body {
         }
 
         .avatar {
-            width: 15em;
-            height: 15em;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 4px solid map-get($palette, dark);
+            border: 5px solid map-get($palette, dark);
             background: #fff;
             padding: 35px;
+            margin: 0 auto;
+
+            path {
+                fill: map-get($palette, dark);
+            }
 
             .avatar-svg {
                 width: 100%;
             }
 
-            #avatarRocket-svg, #avatarRocketBorder-svg, #avatarRocketFire-svg {
-                transform: translateY(-20px);
+            #avatarWheel.isActive {
+                transform-origin: 84.25% 16%;
+                animation: avatarWheel 10s linear infinite;
+            }
+
+            #avatarCircle.isActive {
+                animation: avatarCircle 1s linear infinite alternate;
+            }
+
+            @keyframes avatarWheel {
+                0% { transform: rotate(0) }
+                100% { transform: rotate(360deg) }
+            }
+
+            @keyframes avatarCircle {
+                0% { transform: translateY(0) }
+                20% { transform: translateY(10%) }
+                40% { transform: translateY(5%) }
+                60% { transform: translateY(10%) }
+                80% { transform: translateY(7%) }
+                100% { transform: translateY(10%) }
             }
         }
 
         .avatarName {
-            font-size: 1.35em;
+            font-size: 1.5em;
             color: map-get($palette, dark);
             font-weight: bold;
-            margin: 20px 0;
+            padding: 10px 20px;
+            width: 200px;
+            margin: 20px auto 0 auto;
+            background: #fff;
+            text-align: center;
+            border: 2px solid map-get($palette, dark);
         }
 
         .avatarTitle {
-            font-size: 1.5em;
+            font-size: 3em;
+            font-weight: bold;
             color: map-get($palette, dark);
+
+            @media (max-width: 479px) {
+                font-size: 2em;
+                margin-top: 20px;
+            }
         }
     }
 }
