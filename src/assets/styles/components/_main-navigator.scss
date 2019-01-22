@@ -1,44 +1,106 @@
-.mainNav-area {
-    background: map-get($palette, dark);
-    padding-left: 20px;
-    padding-right: 20px;
+// .mainNav-area {
+//     background: map-get($palette, dark);
+//     padding-left: 20px;
+//     padding-right: 20px;
 
-    .logo-H {
-        display: inline-block;
-        vertical-align: middle;
-    }
+//     .logo-H {
+//         display: inline-block;
+//         vertical-align: middle;
+//     }
 
-    .mainNav {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0;
+//     .mainNav {
+//         display: inline-block;
+//         vertical-align: middle;
+//         margin: 0;
 
-        .navItem {
-            display: inline-block;
-            vertical-align: middle;
+//         .navItem {
+//             display: inline-block;
+//             vertical-align: middle;
     
+//             a {
+//                 color: #b7c9cc;
+//                 font-weight: bold;
+//                 padding-left: 20px;
+//                 padding-right: 2px;
+//                 text-decoration: none;
+//             }
+
+//             &.is-active {
+//                 position: relative;
+
+//                 &:before {
+//                     content: '';
+//                     display: block;
+//                     height: 5px;
+//                     background: map-get($palette, primary);
+//                     position: absolute;
+//                     left: 0;
+//                     right: 0;
+//                     bottom: 0;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+.logo-H {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.ant-menu {
+    background: map-get($palette, dark) !important;
+    border: none !important;
+    overflow: hidden;
+
+    .ant-menu-item {
+        border-bottom: none !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+        padding-bottom: 0 !important;
+        height: auto !important;
+
+        &.ant-menu-item-active, &.ant-menu-item-selected {
             a {
-                color: #b7c9cc;
-                font-weight: bold;
-                padding-left: 20px;
-                padding-right: 2px;
-                text-decoration: none;
+                color: #fff !important;
+                // line-height: 1 !important;
+                // padding: 0 !important;
+                // margin: 0 !important;
+                // border: 1px solid #ccc;
             }
+        }
 
-            &.is-active {
-                position: relative;
+        a {
+            color: #b7c9cc !important;
+            font-weight: bold;
+        }
+    }
+}
 
-                &:before {
-                    content: '';
-                    display: block;
-                    height: 5px;
-                    background: map-get($palette, primary);
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                }
-            }
+.ant-menu-submenu-title {
+    color: #b7c9cc;
+    font-size: 2em;
+    font-weight: bold;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.ant-menu-submenu {
+    border: none !important;
+
+    .ant-menu-sub {
+        margin-top: -8px;
+        background: map-get($palette, dark) !important;
+        color: #b7c9cc;
+        border-radius: 0 !important;
+
+        .ant-menu-item {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
         }
     }
 }

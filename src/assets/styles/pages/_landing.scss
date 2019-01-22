@@ -48,13 +48,13 @@ body {
                 animation: avatarWheel 10s linear infinite;
             }
 
-            #avatarCircle.isActive {
-                animation: avatarCircle 1s linear infinite alternate;
-            }
-
             @keyframes avatarWheel {
                 0% { transform: rotate(0) }
                 100% { transform: rotate(360deg) }
+            }
+
+            #avatarCircle.isActive {
+                animation: avatarCircle 1s linear infinite alternate;
             }
 
             @keyframes avatarCircle {
@@ -77,17 +77,33 @@ body {
             background: #fff;
             text-align: center;
             border: 2px solid map-get($palette, dark);
+            position: relative;
+            animation: avatarName 1s;
+        }
+
+        @keyframes avatarName {
+            0% { opacity: 0; left: 200px; text-indent: -800px }
+            100% { opacity: 1; left: 0; text-indent: 0 }
         }
 
         .avatarTitle {
             font-size: 3em;
             font-weight: bold;
             color: map-get($palette, dark);
+            letter-spacing: 1px;
+            white-space: nowrap;
+            position: relative;
+            animation: avatarTitle 1s;
 
             @media (max-width: 479px) {
                 font-size: 2em;
                 margin-top: 20px;
             }
+        }
+
+        @keyframes avatarTitle {
+            0% { letter-spacing: 10px; opacity: 0 }
+            100% { letter-spacing: 1px; opacity: 1 }
         }
     }
 }

@@ -1,69 +1,85 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Menu, Icon } from 'antd';
 
 
 const MainNavigator = () => {
     const data = [
         {
+            key: 'home',
             path: '/',
-            label: 'SAMPLE PAGE'
+            label: 'Home'
         },
         {
-            path: '/home',
-            label: 'HOME PAGE'
+            key: 'about',
+            path: '/about',
+            label: 'About'
         },
         {
-            path: '/tuci',
-            label: 'TUCI PAGE'
+            key: 'projects',
+            path: '/projects',
+            label: 'Projects'
         },
         {
-            path: '/posts',
-            label: 'POSTS'
-        },
-        {
+            key: 'events',
             path: '/events',
-            label: 'EVENTS'
+            label: 'Events'
         },
         {
+            key: 'login',
             path: '/login',
-            label: 'LOGIN PAGE'
+            label: 'Login'
         }
     ];
 
     return(
-        <div className='mainNav-area'>
-            <div className='logo-H'>
-                <svg viewBox="0 0 80 100">
-                    <path id="logo-h" d="M5,5 
-                            l20,0 
-                            l0,50 
-                            l20,0 
-                            l0,20 
-                            l-20,0 
-                            l0,20 
-                            l-20,0 
-                            l0,-89" />
-                    <path d="M75,95 
-                            l-20,0 
-                            l0,-50 
-                            l-20,0 
-                            l0,-20 
-                            l20,0 
-                            l0,-20 
-                            l20,0 
-                            l0,89" />
-                </svg>
-            </div>
-            <ul className='mainNav'>
-                {
-                    data.map((item, index) =>
-                        <li className='navItem' key={index}>
-                            <Link to={item.path}>{item.label}</Link>
-                        </li>
-                    )
-                }
-            </ul>
-        </div>
+        <Menu
+            mode="horizontal"
+        >
+            <Menu.Item>
+                <div className='logo-H'>
+                    <svg viewBox="0 0 80 100">
+                        <path id="logo-h" d="M5,5 
+                                l20,0 
+                                l0,50 
+                                l20,0 
+                                l0,20 
+                                l-20,0 
+                                l0,20 
+                                l-20,0 
+                                l0,-89" />
+                        <path d="M75,95 
+                                l-20,0 
+                                l0,-50 
+                                l-20,0 
+                                l0,-20 
+                                l20,0 
+                                l0,-20 
+                                l20,0 
+                                l0,89" />
+                    </svg>
+                </div>
+            </Menu.Item>
+            {
+                data.map(item =>
+                    <Menu.Item key={item.key}>
+                        <Link to={item.path}>{item.label}</Link>
+                    </Menu.Item>
+                )
+            }
+        </Menu>
+        // <div className='mainNav-area'>
+            
+        //     <ul className='mainNav'>
+        //         {
+        //             data.map((item, index) =>
+        //                 <li className='navItem' key={index}>
+        //                     <Link to={item.path}>{item.label}</Link>
+        //                 </li>
+        //             )
+        //         }
+        //     </ul>
+        // </div>
     );
 }
 

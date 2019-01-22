@@ -4,14 +4,15 @@ import { BrowserRouter as Router, Switch, Route, IndexRoute, Redirect } from 're
 // COMPONENTS
 import MainLayout from 'components/common/MainLayout';
 import LandingPage from 'pages/LandingPage';
-import SamplePage from 'pages/SamplePage';
-import TuciInputPage from 'pages/TuciInputPage';
-import HomePage from 'pages/HomePage';
-import Page404 from 'pages/Page404';
-import LoginPage from 'pages/LoginPage';
-import Test from 'pages/Test';
+import AboutPage from 'pages/AboutPage';
 import PostListPage from 'pages/PostListPage';
 import EventsPage from 'pages/EventsPage';
+import LoginPage from 'pages/LoginPage';
+import Page404 from 'pages/Page404';
+// import SamplePage from 'pages/SamplePage';
+// import TuciInputPage from 'pages/TuciInputPage';
+// import HomePage from 'pages/HomePage';
+// import Test from 'pages/Test';
 
 
 const AppRouter = () => (
@@ -19,13 +20,14 @@ const AppRouter = () => (
 		<Switch>
 			<MainLayout>
 				<Route path='/' exact component={LandingPage} />
-				<Route path='/sample' exact component={SamplePage} />
+				<Route path='/about' component={AboutPage} />
+				<Route path='/projects' component={PostListPage} />
+				<Route path='/events' component={EventsPage} />
+				<Route path='/login' component={LoginPage} />
+				{/* <Route path='/sample' exact component={SamplePage} />
 				<Route path='/home' component={HomePage} />
 				<Route path='/tuci' component={TuciInputPage} />
-				<Route path='/login' component={LoginPage} />
-				<Route path='/test' component={Test} />
-				<Route path='/posts' component={PostListPage} />
-				<Route path='/events' component={EventsPage} />
+				<Route path='/test' component={Test} /> */}
 				<Route path='/not-found' component={Page404} />
 			</MainLayout>
 		</Switch>
