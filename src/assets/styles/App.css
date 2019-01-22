@@ -1705,6 +1705,16 @@ body.isLandingPage {
     letter-spacing: 1px;
     opacity: 1; } }
 
+.skillArea .skillBar {
+  width: 100%;
+  height: 5px;
+  background: #ccc; }
+  .skillArea .skillBar > span {
+    display: block;
+    width: 50%;
+    height: 5px;
+    background: #1ba94c; }
+
 body {
   background: #f3f7f7 !important; }
 
