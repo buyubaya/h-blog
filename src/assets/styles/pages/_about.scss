@@ -1,12 +1,13 @@
-.skills-area {
-    width: 50%;
-}
-
 .skill-group {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
     margin-bottom: 40px;
+
+    // SKILL POINT
+    .skill-point {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 
     .skill-svg {
         display: flex;
@@ -71,6 +72,44 @@
                 position: absolute;
                 right: -1em;
                 top: calc(50% - 1em);
+            }
+        }
+    }
+
+    // SKILL INFO
+    .skill-info-list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        .skill-info {
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .skill-info-title {
+            display: inline-block;
+            background: #fff;
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 2px solid map-get($palette, dark);
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .skill-info-img {
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 5px;
+            margin: 0 auto;
+            // background: map-get($palette, primary-light);
+            background: #fff;
+            border: 2px solid map-get($palette, dark);
+
+            img {
+                width: 100%;
             }
         }
     }

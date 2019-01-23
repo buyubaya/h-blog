@@ -1708,14 +1708,13 @@ body.isLandingPage {
     transform: scaleX(1);
     opacity: 1; } }
 
-.skills-area {
-  width: 50%; }
-
 .skill-group {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
   margin-bottom: 40px; }
+  .skill-group .skill-point {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 10px; }
   .skill-group .skill-svg {
     display: flex;
     justify-content: center;
@@ -1769,6 +1768,32 @@ body.isLandingPage {
         position: absolute;
         right: -1em;
         top: calc(50% - 1em); }
+  .skill-group .skill-info-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+    .skill-group .skill-info-list .skill-info {
+      text-align: center;
+      margin: 0 5px; }
+    .skill-group .skill-info-list .skill-info-title {
+      display: inline-block;
+      background: #fff;
+      padding: 5px;
+      margin-bottom: 5px;
+      border: 2px solid #39424e;
+      border-radius: 4px;
+      text-align: center; }
+    .skill-group .skill-info-list .skill-info-img {
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      overflow: hidden;
+      padding: 5px;
+      margin: 0 auto;
+      background: #fff;
+      border: 2px solid #39424e; }
+      .skill-group .skill-info-list .skill-info-img img {
+        width: 100%; }
 
 body {
   background: #f3f7f7 !important; }
