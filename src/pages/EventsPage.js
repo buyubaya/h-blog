@@ -1,5 +1,6 @@
 import React from 'react';
-import MainBreadcrumb from 'components/common/MainBreadcrumb';
+import { compose } from 'recompose';
+import withBreadcrumb from 'components/HOCs/withBreadcrumb';
 
 
 class EventsPage extends React.Component {   
@@ -7,7 +8,7 @@ class EventsPage extends React.Component {
         const events = [
             {
                 eventTime: '01/01/2011',
-                eventLocation: 'DXC',
+                eventLocation: 'Amazon',
                 eventShortDescription: 'Developer',
                 eventDescription: 'Working as a junior developer'
             },
@@ -26,36 +27,34 @@ class EventsPage extends React.Component {
         ];
 
         return(
-            <div className='events-page'>
-                <MainBreadcrumb />
-                
-                <section className='section'>
-                    <ul className='eventList'>
-                        {
-                            events.map((item, index) => 
-                                <li className='eventRow clearfix' key={index}>
-                                    <div className='eventItem'>
-                                        <div className='eventCard cardItem'>
-                                            <div className='eventTime'>
-                                                {item.eventTime}
-                                            </div>
-                                            <h3 className='eventLocation text-bold'>
-                                                {item.eventLocation}
-                                            </h3>
-                                            <p>
-                                                {item.eventShortDescription}
-                                            </p>
+            <section className='section'>
+                <ul className='eventList'>
+                    {
+                        events.map((item, index) => 
+                            <li className='eventRow clearfix' key={index}>
+                                <div className='eventItem'>
+                                    <div className='eventCard cardItem'>
+                                        <div className='eventTime'>
+                                            {item.eventTime}
                                         </div>
+                                        <h3 className='eventLocation text-bold'>
+                                            {item.eventLocation}
+                                        </h3>
+                                        <p>
+                                            {item.eventShortDescription}
+                                        </p>
                                     </div>
-                                </li> 
-                            )
-                        }
-                    </ul>
-                </section>
-            </div>
+                                </div>
+                            </li> 
+                        )
+                    }
+                </ul>
+            </section>
         );
     }
 }
 
 
-export default EventsPage;
+export default compose(
+    withBreadcrumb('events-page')
+)(EventsPage);

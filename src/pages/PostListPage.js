@@ -1,6 +1,7 @@
 import React from 'react';
 import { Skeleton, Button } from 'antd';
-import MainBreadcrumb from 'components/common/MainBreadcrumb';
+import { compose } from 'recompose';
+import withBreadcrumb from 'components/HOCs/withBreadcrumb';
 
 
 class PostListPage extends React.Component {
@@ -31,34 +32,33 @@ class PostListPage extends React.Component {
         }
 
         return(
-            <div className='postList-container'>
-                <MainBreadcrumb />
-
-                <section className='section'>
-                    <div className='cardList'>
-                        {
-                            posts.map((item, index) =>
-                                <div className='cardItem' key={index}>
-                                    <div className='cardBody'>
-                                        <div className='cardInfo'>
-                                            <h3 className='cardTitle'>{item.title}</h3>
-                                            <ul className='levelBar'>
-                                                <li><span style={styles.levelSpan}></span></li>
-                                                <li><span style={styles.levelSpan}></span></li>
-                                                <li><span style={styles.levelSpan}></span></li>
-                                            </ul>
-                                            <p className='cardDescription'>{item.description}</p>
-                                        </div>
-                                        <Button className='btn btn-default'>See demo</Button>
+            <section className='section'>
+                <div className='cardList'>
+                    {
+                        posts.map((item, index) =>
+                            <div className='cardItem' key={index}>
+                                <div className='cardBody'>
+                                    <div className='cardInfo'>
+                                        <h3 className='cardTitle'>{item.title}</h3>
+                                        <ul className='levelBar'>
+                                            <li><span style={styles.levelSpan}></span></li>
+                                            <li><span style={styles.levelSpan}></span></li>
+                                            <li><span style={styles.levelSpan}></span></li>
+                                        </ul>
+                                        <p className='cardDescription'>{item.description}</p>
                                     </div>
+                                    <Button className='btn btn-default'>See demo</Button>
                                 </div>
-                            )
-                        }
-                    </div>
-                </section>
-            </div>
+                            </div>
+                        )
+                    }
+                </div>
+            </section>
         );
     }
 }
 
-export default PostListPage;
+
+export default compose(
+    withBreadcrumb('postList-container')
+)(PostListPage);

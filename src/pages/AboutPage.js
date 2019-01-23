@@ -1,5 +1,6 @@
 import React from 'react';
-import Breadcrumb from 'components/common/MainBreadcrumb';
+import { compose } from 'recompose';
+import withBreadcrumb from 'components/HOCs/withBreadcrumb';
 
 
 class AboutPage extends React.Component {
@@ -178,52 +179,48 @@ class AboutPage extends React.Component {
         const { skills } = this.state;
 
         return(
-            <div className='about-page'>
-                <Breadcrumb />
-
-                <div className='section'>
-                    <div className='skills-area'>
-                        {
-                            skills && skills.map((item, index) => (
-                                <div className='skill-group row' key={item.key}>
-                                    <div className='skill-point column column-4-md'>
-                                        <div className='skill-svg'>
-                                            <div className='skill-name' dangerouslySetInnerHTML={{__html: item.name}}></div>
-                                            <svg viewBox="0 0 100 100">
-                                                <circle className='circle-1' cx="50%" cy="50%" r="48" />
-                                                <circle ref={el => this['circle_'+item.key] = el} className='circle-2' cx="50%" cy="50%" r="48" />
-                                            </svg>
-                                        </div>
-                                        <div className='skill-bar'>
-                                            <span ref={el => this['skill_'+item.key] = el}><img className='skill-icon' src={require(`../assets/images/${item.img}`)} /></span>
-                                        </div>
+            <div className='section'>
+                <div className='skills-area'>
+                    {
+                        skills && skills.map((item, index) => (
+                            <div className='skill-group row' key={item.key}>
+                                <div className='skill-point column column-4-md'>
+                                    <div className='skill-svg'>
+                                        <div className='skill-name' dangerouslySetInnerHTML={{__html: item.name}}></div>
+                                        <svg viewBox="0 0 100 100">
+                                            <circle className='circle-1' cx="50%" cy="50%" r="48" />
+                                            <circle ref={el => this['circle_'+item.key] = el} className='circle-2' cx="50%" cy="50%" r="48" />
+                                        </svg>
                                     </div>
-                                    <div className='skill-info column column-8-md'>
-                                        <ul className='skill-info-list'>
-                                            {
-                                                item.infos && item.infos.map(info =>
-                                                    <li className='skill-info' key={info.key} ref={el => this[`skill_info_${item.key}_${info.key}`] = el}>
-                                                        <p 
-                                                            className='skill-info-title' 
-                                                            style={{
-                                                                backgroundColor: info.bgColor || '#fff',
-                                                                color: info.textColor || 'inherit'
-                                                            }}
-                                                        >
-                                                            {info.title}
-                                                        </p>
-                                                        <div className='skill-info-img'>
-                                                            <img src={require(`../assets/images/${info.img}`)} />
-                                                        </div>
-                                                    </li>
-                                                )
-                                            }
-                                        </ul>
+                                    <div className='skill-bar'>
+                                        <span ref={el => this['skill_'+item.key] = el}><img className='skill-icon' src={require(`../assets/images/${item.img}`)} /></span>
                                     </div>
                                 </div>
-                            ))
-                        }
-                    </div>
+                                <div className='skill-info column column-8-md'>
+                                    <ul className='skill-info-list'>
+                                        {
+                                            item.infos && item.infos.map(info =>
+                                                <li className='skill-info' key={info.key} ref={el => this[`skill_info_${item.key}_${info.key}`] = el}>
+                                                    <p 
+                                                        className='skill-info-title' 
+                                                        style={{
+                                                            backgroundColor: info.bgColor || '#fff',
+                                                            color: info.textColor || 'inherit'
+                                                        }}
+                                                    >
+                                                        {info.title}
+                                                    </p>
+                                                    <div className='skill-info-img'>
+                                                        <img src={require(`../assets/images/${info.img}`)} />
+                                                    </div>
+                                                </li>
+                                            )
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         );
@@ -231,4 +228,6 @@ class AboutPage extends React.Component {
 }
 
 
-export default AboutPage;
+export default compose(
+    withBreadcrumb('about-page')
+)(AboutPage);

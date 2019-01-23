@@ -37,7 +37,7 @@ const MainNavigator = () => {
             mode="horizontal"
         >
             <Menu.Item>
-                <div className='logo-H'>
+                <Link to='/' className='logo-H'>
                     <svg viewBox="0 0 80 100">
                         <path id="logo-h" d="M5,5 
                                 l20,0 
@@ -58,7 +58,7 @@ const MainNavigator = () => {
                                 l20,0 
                                 l0,89" />
                     </svg>
-                </div>
+                </Link>
             </Menu.Item>
             {
                 data.map(item =>
@@ -68,18 +68,6 @@ const MainNavigator = () => {
                 )
             }
         </Menu>
-        // <div className='mainNav-area'>
-            
-        //     <ul className='mainNav'>
-        //         {
-        //             data.map((item, index) =>
-        //                 <li className='navItem' key={index}>
-        //                     <Link to={item.path}>{item.label}</Link>
-        //                 </li>
-        //             )
-        //         }
-        //     </ul>
-        // </div>
     );
 }
 
