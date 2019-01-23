@@ -1,5 +1,22 @@
+$skill-bar-active-color: #099;
+
+.skills-area {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .skill-group {
-    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #e7e7e7;
+
+    &:not(:first-child) {
+        border-top: none;
+    }
+
+    &:hover {
+        background: #EAF8FC !important;
+    }
 
     // SKILL POINT
     .skill-point {
@@ -43,7 +60,7 @@
         }
         
         .circle-2 {
-            stroke: map-get($palette, dark);
+            stroke: $skill-bar-active-color;
             stroke-dasharray: 314.159265359;
             stroke-dashoffset: 314.159265359;
             transition: stroke-dashoffset 2s;
@@ -62,7 +79,7 @@
             display: block;
             width: 0;
             height: 5px;
-            background: map-get($palette, dark);
+            background: $skill-bar-active-color;
             position: relative;
             transition: 2s;
 
@@ -81,10 +98,19 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        margin: 0;
 
         .skill-info {
             text-align: center;
             margin: 0 5px;
+            opacity: 0;
+            margin-bottom: 20px;
+            transition: margin-bottom 0.5s, opacity 0.5s;
+
+            &.is-active {
+                opacity: 1;
+                margin-bottom: 0;
+            }
         }
 
         .skill-info-title {

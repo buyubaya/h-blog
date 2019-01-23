@@ -1708,8 +1708,18 @@ body.isLandingPage {
     transform: scaleX(1);
     opacity: 1; } }
 
+.skills-area {
+  max-width: 800px;
+  margin: 0 auto; }
+
 .skill-group {
-  margin-bottom: 40px; }
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #e7e7e7; }
+  .skill-group:not(:first-child) {
+    border-top: none; }
+  .skill-group:hover {
+    background: #EAF8FC !important; }
   .skill-group .skill-point {
     display: flex;
     flex-wrap: nowrap;
@@ -1744,7 +1754,7 @@ body.isLandingPage {
       stroke: #ccc;
       stroke-width: 5; }
     .skill-group .skill-svg .circle-2 {
-      stroke: #39424e;
+      stroke: #099;
       stroke-dasharray: 314.159265359;
       stroke-dashoffset: 314.159265359;
       transition: stroke-dashoffset 2s; }
@@ -1759,7 +1769,7 @@ body.isLandingPage {
       display: block;
       width: 0;
       height: 5px;
-      background: #39424e;
+      background: #099;
       position: relative;
       transition: 2s; }
       .skill-group .skill-bar > span .skill-icon {
@@ -1771,10 +1781,17 @@ body.isLandingPage {
   .skill-group .skill-info-list {
     display: flex;
     justify-content: center;
-    align-items: flex-end; }
+    align-items: flex-end;
+    margin: 0; }
     .skill-group .skill-info-list .skill-info {
       text-align: center;
-      margin: 0 5px; }
+      margin: 0 5px;
+      opacity: 0;
+      margin-bottom: 20px;
+      transition: margin-bottom 0.5s, opacity 0.5s; }
+      .skill-group .skill-info-list .skill-info.is-active {
+        opacity: 1;
+        margin-bottom: 0; }
     .skill-group .skill-info-list .skill-info-title {
       display: inline-block;
       background: #fff;
