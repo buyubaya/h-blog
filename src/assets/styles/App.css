@@ -1879,6 +1879,10 @@ body {
     @media (max-width: 479px) {
       .card-list .card-item {
         width: 100%; } }
+  .card-list .ant-input-group-wrapper {
+    margin-bottom: 20px; }
+    .card-list .ant-input-group-wrapper .ant-input-group-addon {
+      cursor: pointer; }
 
 .level-bar {
   width: 100%;

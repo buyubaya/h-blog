@@ -19,6 +19,14 @@
             width: 100%;  
         }
     }
+
+    .ant-input-group-wrapper {
+        margin-bottom: 20px;
+
+        .ant-input-group-addon {
+            cursor: pointer;
+        }
+    }
 }
 
 
