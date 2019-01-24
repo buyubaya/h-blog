@@ -5,7 +5,7 @@ import Breadcrumb from 'components/common/Breadcrumb';
 const withBreadcrumb = containerClassName => Comp => (props, context) => {
     return(
         <div className={containerClassName}>
-            <Breadcrumb matchPath={props.match && props.match.path} />
+            <Breadcrumb match={props.match} />
             <Comp {...props} />
         </div>
     );

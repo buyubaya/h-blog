@@ -98,8 +98,10 @@
         background: map-get($palette, dark) !important;
         color: #b7c9cc;
         border-radius: 0 !important;
+        padding: 0 !important;
 
         .ant-menu-item {
+            background: none !important;
             padding-top: 10px !important;
             padding-bottom: 10px !important;
         }

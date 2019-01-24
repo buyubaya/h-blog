@@ -1,15 +1,15 @@
-.cardItem {
+.card-item {
     background: #fff;
     border: none;
     box-shadow: 0 3px 8px 0 rgba(115, 143, 147, .4);
     padding: 20px;
     transition: box-shadow 0.3s;
 
-    .cardTitle {
+    .card-title {
         font-size: 24px;
     }
 
-    .cardBody {
+    .card-body {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -26,5 +26,9 @@
         height: auto;
         margin-top: 20px;
         padding: 10px 20px;
+
+        &:focus, &:active {
+            text-decoration: none;
+        }
     }
 }

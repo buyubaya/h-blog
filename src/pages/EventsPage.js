@@ -28,16 +28,16 @@ class EventsPage extends React.Component {
 
         return(
             <section className='section'>
-                <ul className='eventList'>
+                <ul className='event-list'>
                     {
                         events.map((item, index) => 
-                            <li className='eventRow clearfix' key={index}>
-                                <div className='eventItem'>
-                                    <div className='eventCard cardItem'>
-                                        <div className='eventTime'>
+                            <li className='event-row clearfix' key={index}>
+                                <div className='event-item'>
+                                    <div className='event-card card-item'>
+                                        <div className='event-time'>
                                             {item.eventTime}
                                         </div>
-                                        <h3 className='eventLocation text-bold'>
+                                        <h3 className='event-location text-bold'>
                                             {item.eventLocation}
                                         </h3>
                                         <p>

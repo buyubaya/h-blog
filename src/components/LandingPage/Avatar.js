@@ -30,13 +30,13 @@ class Avatar extends React.Component {
                             els[i].style.strokeDashoffset = 0;
                             setTimeout(() => {
                                 els[i].style.fillOpacity = 1;
-                                const avatarWheel = document.getElementById('avatarWheel');
-                                const avatarCircle = document.getElementById('avatarCircle');
+                                const avatarWheel = document.getElementById('avatar-wheel');
+                                const avatarCircle = document.getElementById('avatar-circle');
                                 if(avatarWheel){
-                                    avatarWheel.classList.add('isActive');
+                                    avatarWheel.classList.add('is-active');
                                 }
                                 if(avatarCircle){
-                                    avatarCircle.classList.add('isActive');
+                                    avatarCircle.classList.add('is-active');
                                 }
                             }, 2000);
                         }
@@ -51,7 +51,7 @@ class Avatar extends React.Component {
 <svg 
     id="avatar-svg"
 	viewBox="0 0 512.001 512.001">
-    <g id="avatarWheel">
+    <g id="avatar-wheel">
         <path style={{fill:"#FF5A5A"}} d="M379.15,130.365l18.107-5.851c4.517,3.658,9.614,6.627,15.132,8.75l3.987,18.611h32.252l3.987-18.611
         c5.518-2.122,10.614-5.092,15.132-8.75l18.107,5.851l16.147-27.921l-14.133-12.766c0.446-2.848,0.68-5.767,0.68-8.741
         s-0.234-5.892-0.68-8.741l14.133-12.765L485.853,31.51l-18.107,5.851c-4.517-3.658-9.614-6.627-15.132-8.75L448.627,10h-32.252
@@ -85,7 +85,7 @@ class Avatar extends React.Component {
 	c-29.479,7.959-49.957,34.7-49.957,65.234v85.266H447.958z"/>
     <path style={{fill:"#AAE6FF"}} d="M347.502,318.001H164.501c-27.89,0-50.5,22.609-50.5,50.499v133.501h284V368.5
 	C398.001,340.61,375.392,318.001,347.502,318.001z"/>
-    <g id="avatarCircle">
+    <g id="avatar-circle">
         <circle style={{fill:"#FFFFFF"}} cx="256.001" cy="410" r="28"/>
         <path d="M256.001,372.001c-20.953,0-38,17.047-38,38s17.047,38,38,38s38-17.047,38-38S276.955,372.001,256.001,372.001z
         M256.001,428.001c-9.925,0-18-8.075-18-18s8.075-18,18-18s18,8.075,18,18S265.926,428.001,256.001,428.001z"/>

@@ -1,11 +1,11 @@
-.eventList {
-    .eventRow {
+.event-list {
+    .event-row {
         position: relative;
 
         &:nth-child(2n + 1) {
             margin-right: calc(50% + 50px);
 
-            .eventItem {
+            .event-item {
                 float: right;
 
                 &:before {
@@ -17,12 +17,12 @@
                 }
             }
 
-            .eventCard {
+            .event-card {
                 border-right: 4px solid map-get($palette, dark);
             }
 
             @media (min-width: 768px) {
-                .eventTime {
+                .event-time {
                     position: absolute;
                     left: calc(100% + 65px);
                     top: 50%;
@@ -34,7 +34,7 @@
         &:nth-child(2n) {
             margin-left: calc(50% + 50px);
 
-            .eventItem {
+            .event-item {
                 &:before {
                     left: -52px;
                 }
@@ -44,12 +44,12 @@
                 }
             }
 
-            .eventCard {
+            .event-card {
                 border-left: 4px solid map-get($palette, dark);
             }
 
             @media (min-width: 768px) {
-                .eventTime {
+                .event-time {
                     position: absolute;
                     right: calc(100% + 65px);
                     top: 50%;
@@ -58,11 +58,11 @@
             }
         }
 
-        .eventItem {
+        .event-item {
             width: 300px;
             max-width: 100%;
 
-            .eventTime {
+            .event-time {
                 font-size: 0.9em;
             }
 
@@ -93,16 +93,16 @@
 
 
 @media (max-width: 639px) {
-    .eventList {
-        .eventRow {
+    .event-list {
+        .event-row {
             margin-left: 50px !important;
             margin-right: 0 !important;
             padding: 10px 0;
 
-            .eventItem {
+            .event-item {
                 float: none !important;
 
-                .eventCard {
+                .event-card {
                     border: none;
                     border-left: 4px solid map-get($palette, dark);
                 }

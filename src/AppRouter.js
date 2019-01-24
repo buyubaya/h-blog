@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, IndexRoute, Redirect } from 're
 import MainLayout from 'components/common/MainLayout';
 import LandingPage from 'pages/LandingPage';
 import AboutPage from 'pages/AboutPage';
-import PostListPage from 'pages/PostListPage';
+import ProjectsPage from 'pages/ProjectsPage';
 import EventsPage from 'pages/EventsPage';
 import LoginPage from 'pages/LoginPage';
 import Page404 from 'pages/Page404';
@@ -21,7 +21,7 @@ const AppRouter = () => (
 			<MainLayout>
 				<Route path='/' exact component={LandingPage} />
 				<Route path='/about' component={AboutPage} />
-				<Route path='/projects' component={PostListPage} />
+				<Route path='/projects' component={ProjectsPage} />
 				<Route path='/events' component={EventsPage} />
 				<Route path='/login' component={LoginPage} />
 				{/* <Route path='/sample' exact component={SamplePage} />
