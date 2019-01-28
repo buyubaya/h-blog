@@ -7,15 +7,6 @@
         stroke: #126e32;
         background: #39424e;
         transition: background 0.5s;
-        
-        &:hover {
-            background: #f3f7f7;
-            
-            path {
-                fill: #1ba94c;
-                stroke-dashoffset: 0;
-            }
-        }
     }
 
     path {
@@ -26,5 +17,16 @@
         stroke-dasharray: 259 259;
         stroke-dashoffset: -259;
         transition: stroke-dashoffset 1s, fill 0.5s 1s;
+    }
+
+    &:hover {
+        svg {
+            background: #f3f7f7;
+        
+            path {
+                fill: #1ba94c;
+                stroke-dashoffset: 0;
+            }
+        }
     }
 }

@@ -119,7 +119,7 @@ SampleForm = lifecycle({
             photos: [
                 {
                     uid: '-1',
-                    name: 'default.png',
+                    name: 'some_photo.png',
                     url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
                 }
             ]
@@ -143,6 +143,7 @@ SampleForm = withFormik({
         console.log('RESET', bag);
     },
     handleSubmit: (values, bag) => {
+        console.log('SUBMIT', values);
         bag.setStatus({
             _error: 'HELLO'
         });

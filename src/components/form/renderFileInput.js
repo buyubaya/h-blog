@@ -1,6 +1,6 @@
 import React from 'react';
 import { compose, pure, withState, withHandlers, lifecycle } from 'recompose';
-import { Upload, Icon } from 'antd';
+import { Upload, Button, Icon } from 'antd';
 
 
 const renderFileInput = ({ 
@@ -15,17 +15,16 @@ const renderFileInput = ({
     <div className='tuci-fileInput'>
         <Upload
             action={action}
-            listType="picture-card"
+            // listType="picture-card"
             fileList={fileList}
             onRemove={handleRemove}
             beforeUpload={handleBeforeUpload}
             onChange={handleChange}
             showUploadList={{ showPreviewIcon: false }}
         >
-            <div>
-                <Icon type={'plus'} />
-                <div className="ant-upload-text">Upload</div>
-            </div>
+            <Button>
+                <Icon type={'upload'} />Select file
+            </Button>
         </Upload>
     </div>
 );
@@ -35,12 +34,23 @@ export default compose(
     pure,
     withState('fileList', 'setFileList', []),
     withHandlers({
-        handleBeforeUpload: props => file => false,
+        handleBeforeUpload: ({ fileList, setFileList }) => file => {
+            setFileList && setFileList([...fileList, file]);
+            return false;
+        },
 
         handleChange: ({ field: { name }, form: { setFieldValue }, setFileList }) => ({ file, fileList, event }) => {
             setFileList && setFileList(fileList);
-            fileList = fileList.map(({ thumbUrl, ...rest }) => rest);
+            // fileList = fileList.map(({ name, size, type, thumbUrl, ...rest }) => { name, size, type });
             setFieldValue && setFieldValue(name, fileList);
+        },
+
+        handleRemove: ({ field: { name }, form: { setFieldValue }, fileList, setFileList }) => file => {
+            const index = fileList.indexOf(file);
+            const newFileList = fileList.slice();
+            newFileList.splice(index, 1);
+            setFileList && setFileList(newFileList);
+            setFieldValue && setFieldValue(name, newFileList);
         }
     }),
     lifecycle({

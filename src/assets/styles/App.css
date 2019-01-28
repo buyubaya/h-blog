@@ -1115,11 +1115,6 @@ table {
     stroke: #126e32;
     background: #39424e;
     transition: background 0.5s; }
-    .logo-H svg:hover {
-      background: #f3f7f7; }
-      .logo-H svg:hover path {
-        fill: #1ba94c;
-        stroke-dashoffset: 0; }
   .logo-H path {
     fill: #f3f7f7;
     stroke-linecap: round;
@@ -1128,6 +1123,11 @@ table {
     stroke-dasharray: 259 259;
     stroke-dashoffset: -259;
     transition: stroke-dashoffset 1s, fill 0.5s 1s; }
+  .logo-H:hover svg {
+    background: #f3f7f7; }
+    .logo-H:hover svg path {
+      fill: #1ba94c;
+      stroke-dashoffset: 0; }
 
 .breadcrumb-area {
   padding: 20px;
