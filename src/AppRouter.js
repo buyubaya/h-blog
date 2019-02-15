@@ -7,6 +7,7 @@ import LandingPage from 'pages/LandingPage';
 import AboutPage from 'pages/AboutPage';
 import ProjectsPage from 'pages/ProjectsPage';
 import EventsPage from 'pages/EventsPage';
+import CollectionsPage from 'pages/CollectionsPage';
 import LoginPage from 'pages/LoginPage';
 import Page404 from 'pages/Page404';
 import SamplePage from 'pages/SamplePage';
@@ -23,6 +24,7 @@ const AppRouter = () => (
 				<Route path='/about' component={AboutPage} />
 				<Route path='/projects' component={ProjectsPage} />
 				<Route path='/events' component={EventsPage} />
+				<Route path='/collections' component={CollectionsPage} />
 				<Route path='/login' component={LoginPage} />
 				{/* <Route path='/home' component={HomePage} />
 				<Route path='/tuci' component={TuciInputPage} />

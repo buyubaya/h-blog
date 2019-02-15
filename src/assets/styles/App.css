@@ -1058,9 +1058,9 @@ table {
   .card-item:hover {
     box-shadow: 0 6px 16px 0 rgba(115, 143, 147, 0.5); }
   .card-item .btn {
+    display: inline-block;
     min-width: 150px;
     height: auto;
-    margin-top: 20px;
     padding: 10px 20px; }
     .card-item .btn:focus, .card-item .btn:active {
       text-decoration: none; }

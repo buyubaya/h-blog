@@ -13,18 +13,18 @@ import { Button } from 'antd';
 
 
 const LoginForm = ({ handleReset, handleSubmit }) => (
-    <div className='tuci-box'>
+    <div className='login-form-area card-item'>
         <FormBuilder formData={FIELDS}>
             {data => (
                 data.map((item, index) => 
-                    <div key={index}>
+                    <div key={index} className='mb20'>
                         <div>{item.label}</div>
                         <Field {...item} />
                     </div>
                 )
             )}
         </FormBuilder>
-        <Button onClick={handleReset}>Reset</Button>
+        <Button onClick={handleReset} className='mr20'>Reset</Button>
         <Button onClick={handleSubmit}>Submit</Button>
     </div>
 );

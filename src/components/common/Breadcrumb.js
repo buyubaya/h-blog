@@ -4,24 +4,23 @@ import RouterUrls from 'constants/RouterUrls';
 
 
 class Breadcrumb extends React.Component {
-    formatRouterUrls(RouterUrls){
-        let tmp = {};
+    getBreadCrumb(path){
+        let tmp = [];
 
-        RouterUrls.forEach(item => {
-            let breadcrumb = item.path.split('/') || [];
-            tmp[item.path] = {
-                ...item,
-                breadcrumb
-            };
-        });
+        let currentPath = path;
+        while(currentPath !== ''){
+            currentPath = RouterUrls.find(item => item.path === path);
+            tmp.unshift(currentPath.label);
+            currentPath = currentPath.path.split('/').slice(0, -1).join('/');
+        }
+        tmp.unshift('Home');
 
         return tmp;
     }
 
     render(){
         const path = this.props.match && this.props.match.path;
-        const formattedRouterUrls = this.formatRouterUrls(RouterUrls);
-        const bc = formattedRouterUrls[path]['breadcrumb'];
+        const bc = this.getBreadCrumb(path);
 
         return(
             <div>
@@ -30,7 +29,7 @@ class Breadcrumb extends React.Component {
                         {
                             bc && bc.map((item, index) =>
                                 <AntBreadcrumb.Item key={index}>
-                                    {item === '' ? 'Home' : item}
+                                    {item}
                                 </AntBreadcrumb.Item>
                             )
                         }
@@ -38,7 +37,7 @@ class Breadcrumb extends React.Component {
                 </div>
 
                 <div className='pageHeader'>
-                    <div className='pageTitle'>{formattedRouterUrls[path]['label']}</div>
+                    <div className='pageTitle'>{bc.pop()}</div>
                 </div>
             </div>
         );

@@ -22,9 +22,9 @@
     }
 
     .btn {
+        display: inline-block;
         min-width: 150px;
         height: auto;
-        margin-top: 20px;
         padding: 10px 20px;
 
         &:focus, &:active {

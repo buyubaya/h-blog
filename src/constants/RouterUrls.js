@@ -20,6 +20,11 @@ const RouterUrls = [
         label: 'Events'
     },
     {
+        key: 'collections',
+        path: '/collections',
+        label: 'Collections'
+    },
+    {
         key: 'login',
         path: '/login',
         label: 'Login'
