@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, IndexRoute, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, IndexRoute, Redirect } from 'react-router-dom';
 
 // COMPONENTS
 import MainLayout from 'components/common/MainLayout';
