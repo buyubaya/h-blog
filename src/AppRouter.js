@@ -13,10 +13,10 @@ import SamplePage from 'pages/SamplePage';
 // import TuciInputPage from 'pages/TuciInputPage';
 // import HomePage from 'pages/HomePage';
 // import Test from 'pages/Test';
-
+// <Router basename={process.env.PUBLIC_URL}>
 
 const AppRouter = () => (
-	<Router basename={process.env.PUBLIC_URL}>
+	<Router>
 		<Switch>
 			<MainLayout>
 				<Route path='/' exact component={LandingPage} />
