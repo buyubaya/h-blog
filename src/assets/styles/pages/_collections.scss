@@ -1,0 +1,14 @@
+.collections-list {
+    .list-item {
+        border-radius: 2px;
+        border: 1px solid #037bc1;
+        background: lighten(#037bc1, 40%);
+        margin-bottom: 10px;
+    }
+
+    .list-item-link {
+        display: block;
+        color: darken(#037bc1, 20%);
+        padding: 10px;
+    }
+}

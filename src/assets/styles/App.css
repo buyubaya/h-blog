@@ -1982,3 +1982,14 @@ body {
       .event-list .event-row .event-item:after {
         right: initial;
         left: -56px; } }
+
+.collections-list .list-item {
+  border-radius: 2px;
+  border: 1px solid #037bc1;
+  background: #93d6fd;
+  margin-bottom: 10px; }
+
+.collections-list .list-item-link {
+  display: block;
+  color: #013b5d;
+  padding: 10px; }

@@ -5,6 +5,8 @@ import { lifecycle } from 'recompose';
 
 // COMPONENTS
 import FormBuilder from 'components/form/FormBuilder';
+import FetchComponent from 'components/common/FetchComponent';
+
 
 const required = value => !value ? 'Required' : undefined;
 
@@ -49,15 +51,10 @@ const FIELDS_DB = [
         ]
     },
     {
-        label: 'Hobbies',
-        fieldName: 'hobbies',
+        label: 'Category',
+        fieldName: 'category',
         fieldType: 'checkboxGroup',
-        options: [
-            {value: 'football', label: 'Football'},
-            {value: 'basketball', label: 'Basketball'},
-            {value: 'swimming', label: 'Swimming'},
-            {value: 'climbing', label: 'Climbing'}
-        ]
+        options_url: 'http://nodejs-book-api.herokuapp.com/api/category'
     },
     {
         label: 'Photos',
@@ -69,20 +66,45 @@ const FIELDS_DB = [
 
 
 // FORM
-let SampleForm = (props) => {    
+let SampleForm = (props) => {
     return(
         <Row gutter={16}>
-
             <Col span={12}>
                 <FormBuilder formData={FIELDS_DB}>
-                    {data => (
-                        data.map((item, index) => 
-                            <div key={index}>
-                                <div>{item.label}</div>
-                                <Field {...item} validate={required} />
-                            </div>
-                        )
-                    )}
+                    {data => 
+                        data.map(item => {
+                            if(item.options_url){
+                                return(
+                                    <FetchComponent 
+                                        key={item.name}
+                                        url={item.options_url} 
+                                        onLoading={() => <h1>LOADING...</h1>}
+                                        onSuccess={data => {
+                                            const options = data.map(item => ({
+                                                value: item._id,
+                                                label: item.name
+                                            }));
+                                            return(
+                                                <div>
+                                                    <div>{item.label}</div>
+                                                    <Field {...item} options={options} />
+                                                </div>
+                                            );
+                                        }}
+                                        onError={err => <h1>ERROR</h1>}
+                                    />
+                                );                                          
+                            }
+                            else {
+                                return(
+                                    <div key={item.name}>
+                                        <div>{item.label}</div>
+                                        <Field {...item} />
+                                    </div>
+                                );
+                            }
+                        })
+                    }
                 </FormBuilder>
 
                 <div>
@@ -139,22 +161,15 @@ SampleForm = withFormik({
     //         climbing: true
     //     }
     // }),
-    onReset: (values, bag) =>{
-        console.log('RESET', bag);
-    },
-    handleSubmit: (values, bag) => {
-        console.log('SUBMIT', values);
-        bag.setStatus({
-            _error: 'HELLO'
-        });
-        bag.setValues({});
+    handleSubmit: (values, formikBag) => {
+        formikBag.props.onSubmit && formikBag.props.onSubmit(values, formikBag);
     },
     validate: (values, props) => {
         let errors = {};
 
-        if(values.dob && !/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(values.dob)){
-            errors.dob = 'ERROR';
-        }
+        // if(values.dob && !/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/.test(values.dob)){
+        //     errors.dob = 'ERROR';
+        // }
 
         // errors.sex = 'ERROR';
 
@@ -166,11 +181,26 @@ SampleForm = withFormik({
 
 
 class SamplePage extends React.Component {
+    handleSubmit = (values, formikBag) => {
+        console.log('SUBMIT', values);
+        formikBag.setStatus({
+            _error: 'HELLO'
+        });
+        formikBag.setValues({});
+    }
+
+    handleReset = (values, formikBag) => {
+        console.log('RESET HAHA', values, formikBag);
+    }
+
     render(){
         return(
             <div>
                 <h1>SAMPLE PAGE</h1>  
-                <SampleForm />
+                <SampleForm 
+                    onSubmit={this.handleSubmit} 
+                    onReset={this.handleReset}
+                />
             </div>
         );
     }

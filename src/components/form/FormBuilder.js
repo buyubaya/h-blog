@@ -56,6 +56,7 @@ const FormBuilder = ({ formData, children, className }) => {
             label: item.label,
             value: item.value,
             options: item.options,
+            options_url: item.options_url,
             placeholder: item.placeholder,
             validate: item.validate,
             fieldValidate: item.validate,
