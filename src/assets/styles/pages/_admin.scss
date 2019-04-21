@@ -1,0 +1,42 @@
+.admin-sidebar-area {
+    width: 200px;
+    color: #b7c9cc;
+    background: map-get($palette, dark);
+    position: fixed;
+    top: 57px;
+    bottom: 0;
+    left: 0;
+
+    .admin-sidebar-list {
+        .admin-sidebar-list-item > span {
+            display: block;
+            cursor: pointer;
+            padding: 10px 20px;
+
+            &:hover {
+                color: #fff;
+                background: map-get($palette, primary);
+            }
+        }
+
+        .admin-sidebar-sublist {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+            & > .admin-sidebar-list-item {
+                & > span {
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+.admin-main-area {
+    padding-left: 200px;
+
+    .breadcrumb-area {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

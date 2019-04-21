@@ -3,6 +3,7 @@
 /******************** COLOR ********************/
 /******************** FORM ********************/
 /******************** VENDORS ********************/
+@import url(../fonts/fontawesome/css/all.min.css);
 /******************** COMPONENTS ********************/
 /* 	RESET CSS
 	http://meyerweb.com/eric/tools/css/reset/ 
@@ -1993,3 +1994,29 @@ body {
   display: block;
   color: #013b5d;
   padding: 10px; }
+
+.admin-sidebar-area {
+  width: 200px;
+  color: #b7c9cc;
+  background: #39424e;
+  position: fixed;
+  top: 57px;
+  bottom: 0;
+  left: 0; }
+  .admin-sidebar-area .admin-sidebar-list .admin-sidebar-list-item > span {
+    display: block;
+    cursor: pointer;
+    padding: 10px 20px; }
+    .admin-sidebar-area .admin-sidebar-list .admin-sidebar-list-item > span:hover {
+      color: #fff;
+      background: #1ba94c; }
+  .admin-sidebar-area .admin-sidebar-list .admin-sidebar-sublist {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    .admin-sidebar-area .admin-sidebar-list .admin-sidebar-sublist > .admin-sidebar-list-item > span {
+      padding-left: 30px; }
+
+.admin-main-area {
+  padding-left: 200px; }
+  .admin-main-area .breadcrumb-area {
+    padding-top: 10px;
+    padding-bottom: 10px; }

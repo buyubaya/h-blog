@@ -28,6 +28,16 @@ const RouterUrls = [
         key: 'login',
         path: '/login',
         label: 'Login'
+    },
+    {
+        key: 'admin',
+        path: '/admin',
+        label: 'Admin'
+    },
+    {
+        key: 'dashboard',
+        path: '/admin/dashboard',
+        label: 'Dashboard'
     }
 ];
 

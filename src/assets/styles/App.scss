@@ -1,12 +1,12 @@
 /******************** VARIABLES ********************/
 @import './variables';
 // $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-// $fa-font-path: '../fonts/fontawesome/webfonts';
+$fa-font-path: '../fonts/fontawesome/webfonts';
 
 
 /******************** VENDORS ********************/
 // @import 'bootstrap-sass/assets/stylesheets/bootstrap';
-// @import '../fonts/fontawesome/css/all.min.css';
+@import '../fonts/fontawesome/css/all.min.css';
 
 
 /******************** COMPONENTS ********************/
@@ -37,3 +37,4 @@
 @import './pages/projects';
 @import './pages/events';
 @import './pages/collections';
+@import './pages/admin';

@@ -4,16 +4,21 @@ import RouterUrls from 'constants/RouterUrls';
 
 
 class Breadcrumb extends React.Component {
-    getBreadCrumb(path){
+    getBreadCrumb(path, prefix='Home'){
         let tmp = [];
 
         let currentPath = path;
         while(currentPath !== ''){
-            currentPath = RouterUrls.find(item => item.path === path);
-            tmp.unshift(currentPath.label);
-            currentPath = currentPath.path.split('/').slice(0, -1).join('/');
+            currentPath = RouterUrls.find(item => item.path === currentPath);
+            if(currentPath){
+                tmp.unshift(currentPath.label);
+                currentPath = currentPath.path.split('/').slice(0, -1).join('/');
+            }
+            else {
+                break;
+            }
         }
-        tmp.unshift('Home');
+        tmp.unshift(prefix);
 
         return tmp;
     }

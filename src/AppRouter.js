@@ -11,6 +11,7 @@ import CollectionsPage from 'pages/CollectionsPage';
 import LoginPage from 'pages/LoginPage';
 import Page404 from 'pages/Page404';
 import SamplePage from 'pages/SamplePage';
+import AdminPage from 'pages/AdminPage';
 // import TuciInputPage from 'pages/TuciInputPage';
 // import HomePage from 'pages/HomePage';
 // import Test from 'pages/Test';
@@ -30,6 +31,7 @@ const AppRouter = () => (
 				<Route path='/tuci' component={TuciInputPage} />
 				<Route path='/test' component={Test} /> */}
 				<Route path='/sample' exact component={SamplePage} />
+				<Route path='/admin/dashboard' exact component={AdminPage} />
 				<Route path='/not-found' component={Page404} />
 			</MainLayout>
 		</Switch>
