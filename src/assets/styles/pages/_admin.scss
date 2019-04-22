@@ -32,11 +32,27 @@
 }
 
 
+/******************** BREADCRUMB ********************/
 .admin-main-area {
     padding-left: 200px;
 
     .breadcrumb-area {
         padding-top: 10px;
         padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+
+/******************** TABLE ********************/
+.table-area {
+    margin: 20px;
+    
+    .ant-table-title, .ant-table-footer {
+        background: #fff;
+    }
+
+    .table-image {
+        width: 50px;
     }
 }

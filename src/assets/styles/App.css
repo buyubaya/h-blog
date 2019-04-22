@@ -2015,8 +2015,18 @@ body {
     .admin-sidebar-area .admin-sidebar-list .admin-sidebar-sublist > .admin-sidebar-list-item > span {
       padding-left: 30px; }
 
+/******************** BREADCRUMB ********************/
 .admin-main-area {
   padding-left: 200px; }
   .admin-main-area .breadcrumb-area {
     padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; }
+
+/******************** TABLE ********************/
+.table-area {
+  margin: 20px; }
+  .table-area .ant-table-title, .table-area .ant-table-footer {
+    background: #fff; }
+  .table-area .table-image {
+    width: 50px; }
