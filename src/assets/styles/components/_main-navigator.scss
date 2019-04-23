@@ -55,6 +55,8 @@
     background: map-get($palette, dark) !important;
     border: none !important;
     overflow: hidden;
+    position: relative;
+    z-index: 999999;
 
     .ant-menu-item {
         border-bottom: none !important;

@@ -3,9 +3,11 @@
     color: #b7c9cc;
     background: map-get($palette, dark);
     position: fixed;
-    top: 57px;
+    padding-top: 57px;
+    top: 0;
     bottom: 0;
     left: 0;
+    z-index: 100;
 
     .admin-sidebar-list {
         .admin-sidebar-list-item > span {
@@ -55,4 +57,10 @@
     .table-image {
         width: 50px;
     }
+}
+
+
+/******************** FORM ********************/
+.admin-form-area {
+    // background: #000;
 }
