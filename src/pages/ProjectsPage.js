@@ -28,14 +28,14 @@ class ProjectsPage extends React.Component {
                 description: 'Angular, Web Application',
                 type: 'angular',
                 repo_url: 'https://github.com/buyubaya/ng-porfolio',
-                demo_url: '//hieu1801-ng-porfolio.herokuapp.com'
+                demo_url: 'https://hieu1801-ng-porfolio.herokuapp.com'
             },
             {
                 key: 'graphql-rx-book',
                 title: 'GraphQL-ReactJS Book Store',
                 level: 2/3,
                 description: 'ReactJS, GraphQL, Web Application',
-                type: 'reactjs',
+                type: 'graphql',
                 repo_url: 'https://github.com/buyubaya/graphql-rx-book',
                 demo_url: 'https://buyubaya.github.io/graphql-rx-book/'
             },
