@@ -1874,14 +1874,49 @@ body {
   .card-list .card-info {
     width: 100%; }
   .card-list .card-item {
-    width: calc(33.33% - 40px/3);
-    margin-bottom: 20px; }
+    width: calc(33.33% - 80px/3);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden; }
     @media (max-width: 767px) {
       .card-list .card-item {
         width: calc(50% - 20px/2); } }
     @media (max-width: 479px) {
       .card-list .card-item {
         width: 100%; } }
+    .card-list .card-item .card-tag {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      bottom: 0;
+      left: 0;
+      background-size: 5rem;
+      background-repeat: no-repeat;
+      background-position: top right; }
+      .card-list .card-item .card-tag.angular {
+        background-image: url("../images/angular-icon.png"); }
+      .card-list .card-item .card-tag.reactjs {
+        background-image: url("../images/reactjs-icon.png"); }
+      .card-list .card-item .card-tag.vuejs {
+        background-image: url("../images/vuejs-icon.png"); }
+      .card-list .card-item .card-tag.graphql {
+        background-image: url("../images/graphql-icon.png"); }
+      .card-list .card-item .card-tag.game {
+        background-image: url("../images/game-icon.png"); }
+      .card-list .card-item .card-tag.algorithm {
+        background-image: url("../images/algorithm-icon.png"); }
+      .card-list .card-item .card-tag:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.75); }
+    .card-list .card-item .card-body {
+      position: relative;
+      z-index: 100; }
   .card-list .ant-input-group-wrapper {
     margin-bottom: 20px; }
     .card-list .ant-input-group-wrapper .ant-input-group-addon {
@@ -1986,16 +2021,28 @@ body {
         right: initial;
         left: -56px; } }
 
-.collections-list .list-item {
-  border-radius: 2px;
-  border: 1px solid #037bc1;
-  background: #93d6fd;
-  margin-bottom: 10px; }
+.collections-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .collections-list .list-item {
+    width: calc(25% - 60px/3);
+    border-radius: 2px;
+    border: 1px solid #037bc1;
+    background: #93d6fd;
+    margin-bottom: 20px; }
+  .collections-list .list-item-link {
+    display: block;
+    color: #013b5d;
+    padding: 10px; }
 
-.collections-list .list-item-link {
-  display: block;
-  color: #013b5d;
-  padding: 10px; }
+@media screen and (max-width: 1024px) {
+  .collections-list .list-item {
+    width: calc(100%/3 - 40px/2); } }
+
+@media screen and (max-width: 640px) {
+  .collections-list .list-item {
+    width: 100%; } }
 
 .admin-sidebar-area {
   width: 200px;

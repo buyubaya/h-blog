@@ -1,9 +1,14 @@
 .collections-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     .list-item {
+        width: calc(25% - 60px/3);
         border-radius: 2px;
         border: 1px solid #037bc1;
         background: lighten(#037bc1, 40%);
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .list-item-link {
@@ -11,4 +16,17 @@
         color: darken(#037bc1, 20%);
         padding: 10px;
     }
+}
+
+
+@media screen and (max-width: #{map-get($breakpoints, xl)}px){
+    .collections-list .list-item {
+        width: calc(100%/3 - 40px/2);
+    }        
+}
+
+@media screen and (max-width: #{map-get($breakpoints, md)}px){
+    .collections-list .list-item {
+        width: 100%;
+    }        
 }
