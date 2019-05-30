@@ -25,20 +25,30 @@ const RouterUrls = [
         label: 'Collections'
     },
     {
-        key: 'login',
-        path: '/login',
-        label: 'Login'
+        key: 'contact',
+        path: '/contact',
+        label: 'Contact'
     },
-    {
-        key: 'admin',
-        path: '/admin',
-        label: 'Admin'
-    },
-    {
-        key: 'dashboard',
-        path: '/admin/dashboard',
-        label: 'Dashboard'
-    }
+    // {
+    //     key: 'forum',
+    //     path: '/forum',
+    //     label: 'Forum'
+    // },
+    // {
+    //     key: 'login',
+    //     path: '/login',
+    //     label: 'Login'
+    // },
+    // {
+    //     key: 'admin',
+    //     path: '/admin',
+    //     label: 'Admin'
+    // },
+    // {
+    //     key: 'dashboard',
+    //     path: '/admin/dashboard',
+    //     label: 'Dashboard'
+    // }
 ];
 
 

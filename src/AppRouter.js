@@ -8,6 +8,8 @@ import AboutPage from 'pages/AboutPage';
 import ProjectsPage from 'pages/ProjectsPage';
 import EventsPage from 'pages/EventsPage';
 import CollectionsPage from 'pages/CollectionsPage';
+import ContactPage from 'pages/ContactPage';
+import ForumPage from 'pages/ForumPage';
 import LoginPage from 'pages/LoginPage';
 import Page404 from 'pages/Page404';
 import SamplePage from 'pages/SamplePage';
@@ -26,6 +28,8 @@ const AppRouter = () => (
 				<Route path='/projects' component={ProjectsPage} />
 				<Route path='/events' component={EventsPage} />
 				<Route path='/collections' component={CollectionsPage} />
+				<Route path='/contact' component={ContactPage} />
+				<Route path='/forum' component={ForumPage} />
 				<Route path='/login' component={LoginPage} />
 				{/* <Route path='/home' component={HomePage} />
 				<Route path='/tuci' component={TuciInputPage} />
