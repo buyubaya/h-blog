@@ -28,27 +28,100 @@ class EventsPage extends React.Component {
 
         return(
             <section className='section'>
-                <ul className='event-list'>
-                    {
-                        events.map((item, index) => 
-                            <li className='event-row clearfix' key={index}>
-                                <div className='event-item'>
-                                    <div className='event-card card-item'>
-                                        <div className='event-time'>
-                                            {item.eventTime}
+                <div className='event-list-area'>
+                    <ul className='event-list column-left'>
+                        {
+                            events.map((item, index) => 
+                                index % 2 === 0
+                                ?
+                                <li className={`event-cell clearfix cell-${index+1}`} key={index}>
+                                    <div className='event-item'>
+                                        <div className='event-card card-item'>
+                                            <div className='event-header'>
+                                                <div className='event-number-area'>
+                                                    <div className='event-number'>{index + 1}</div>
+                                                </div>
+                                                <div className='event-title-area'>
+                                                    <div className='event-time'>
+                                                        {item.eventTime}
+                                                    </div>
+                                                    <h3 className='event-location text-bold'>
+                                                        {item.eventLocation}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className='event-body'>
+                                                <p>{item.eventShortDescription}</p>
+                                            </div>
                                         </div>
-                                        <h3 className='event-location text-bold'>
-                                            {item.eventLocation}
-                                        </h3>
-                                        <p>
-                                            {item.eventShortDescription}
-                                        </p>
                                     </div>
-                                </div>
-                            </li> 
-                        )
-                    }
-                </ul>
+                                </li>
+                                :
+                                null
+                            )
+                        }
+                    </ul>
+                    <ul className='event-list column-right'>
+                        {
+                            events.map((item, index) => 
+                                index % 2 === 1
+                                ?
+                                <li className={`event-cell clearfix cell-${index+1}`} key={index}>
+                                    <div className='event-item'>
+                                        <div className='event-card card-item'>
+                                            <div className='event-header'>
+                                                <div className='event-number-area'>
+                                                    <div className='event-number'>{index + 1}</div>
+                                                </div>
+                                                <div className='event-title-area'>
+                                                    <div className='event-time'>
+                                                        {item.eventTime}
+                                                    </div>
+                                                    <h3 className='event-location text-bold'>
+                                                        {item.eventLocation}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className='event-body'>
+                                                <p>{item.eventShortDescription}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                :
+                                null
+                            )
+                        }
+                    </ul>
+                    <ul className='event-list column-left sp'>
+                        {
+                            events.map((item, index) => 
+                                <li className={`event-cell clearfix cell-${index+1}`} key={index}>
+                                    <div className='event-item'>
+                                        <div className='event-card card-item'>
+                                            <div className='event-header'>
+                                                <div className='event-number-area'>
+                                                    <div className='event-number'>{index + 1}</div>
+                                                </div>
+                                                <div className='event-title-area'>
+                                                    <div className='event-time'>
+                                                        {item.eventTime}
+                                                    </div>
+                                                    <h3 className='event-location text-bold'>
+                                                        {item.eventLocation}
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div className='event-body'>
+                                                <p>{item.eventShortDescription}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            )
+                        }
+                    </ul>
+                </div>
             </section>
         );
     }
