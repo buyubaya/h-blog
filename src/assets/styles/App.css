@@ -1913,7 +1913,7 @@ body {
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(255, 255, 255, 0.75); }
+        background: rgba(255, 255, 255, 0.9); }
     .card-list .card-item .card-body {
       position: relative;
       z-index: 100; }
