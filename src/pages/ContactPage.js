@@ -7,6 +7,20 @@ import ContactMeChatBox from '../components/ContactPage/ContactMeChatBox';
 class ContactPage extends Component {
     state = {
         maskPosition: true
+	}
+	
+	componentWillMount(){
+        document.body.classList.add('is-contact-page');
+        this.unlisten = this.props.history.listen((location, action) => {
+            if(location.pathname !== '/contact'){
+                document.body.classList.remove('is-contact-page');
+            }
+        });
+    }
+
+    componentWillUnMount(){
+        document.body.classList.remove('is-contact-page');
+        this.unlisten();
     }
 
     handleSwitch = () => {

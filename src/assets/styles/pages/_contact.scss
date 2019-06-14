@@ -257,10 +257,11 @@ $cta-contact-bottom-position: (right: 2rem, bottom: 2rem);
 
 
 
-
+body.is-contact-page {
+	background: url('https://www.fscaconference.org/images/bg/pattern/memphis-colorful.png') !important;
+}
 .contact-page {
     .main-content {
-        background: url('https://www.fscaconference.org/images/bg/pattern/memphis-colorful.png');
         padding: 40px 0;
     }
 }
