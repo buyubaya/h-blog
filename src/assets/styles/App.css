@@ -2049,7 +2049,7 @@ body {
   .event-list-area {
     max-width: 700px;
     margin: 0 auto; }
-  .event-list.sp {
+  .event-list > .event-cell:nth-child(2n) {
     display: none; } }
 
 @media (max-width: 767px) {
@@ -2058,11 +2058,11 @@ body {
     margin: 0 auto; }
   .event-list-area:before, .event-header:before, .event-header:after {
     display: none !important; }
-  .event-list:not(.sp) {
+  .event-list.column-right {
     display: none; }
-  .event-list.sp {
+  .event-list.column-left {
     width: 100%; }
-    .event-list.sp .event-cell {
+    .event-list.column-left .event-cell {
       padding: 20px 0; } }
 
 .collections-list {

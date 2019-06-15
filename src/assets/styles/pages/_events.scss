@@ -277,8 +277,10 @@
         max-width: 700px;
         margin: 0 auto;
     }
-    .event-list.sp {
-        display: none;
+    .event-list {
+        & > .event-cell:nth-child(2n) {
+            display: none;
+        }
     }
 }
 
@@ -290,10 +292,10 @@
     .event-list-area:before, .event-header:before, .event-header:after {
         display: none !important;
     }
-    .event-list:not(.sp) {
+    .event-list.column-right {
         display: none;
     }
-    .event-list.sp {
+    .event-list.column-left {
         width: 100%;
 
         .event-cell {
