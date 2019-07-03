@@ -1963,7 +1963,7 @@ body {
   .event-list-area .event-list {
     width: 50%; }
     .event-list-area .event-list.column-right {
-      padding-top: 100px; }
+      padding-top: 300px; }
 
 .event-list {
   display: flex;
@@ -1977,6 +1977,9 @@ body {
     padding: 0; }
   .event-list .event-header, .event-list .event-body {
     padding: 20px; }
+    .event-list .event-header pre, .event-list .event-body pre {
+      white-space: pre-wrap;
+      word-break: break-all; }
   .event-list .event-header {
     display: table;
     width: 100%;
@@ -2047,7 +2050,7 @@ body {
 
 @media (min-width: 768px) {
   .event-list-area {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto; }
   .event-list > .event-cell:nth-child(2n) {
     display: none; } }

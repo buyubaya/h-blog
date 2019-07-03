@@ -7,22 +7,52 @@ class EventsPage extends React.Component {
     render(){
         const events = [
             {
-                eventTime: '01/01/2011',
-                eventLocation: 'Amazon',
-                eventShortDescription: 'Developer',
-                eventDescription: 'Working as a junior developer'
+                eventTime: '05/2018 - Present',
+                eventLocation: 'DXC Technology',
+                eventShortDescription: 'Front-end Developer',
+                eventDescription: 
+`
+* Working as a Front-end Developer:
+- Define Front-end code structure for SCSS.
+- Layout and implement UI markup.
+- Build all base components for common use in ReactJS.
+- Config Webpack for Front-end.
+- Code, implement new features based on requirement.
+- Communicate and fix bugs related to Front-end.
+- Attend New Skill Course in the Company.
+    
+* Skills gained:
+- Technical skills: Webpack Configuration, Code optimization, Debugging,...
+- Understanding how to work in Agile Model.
+- Improve English Communication skill.
+`
             },
             {
-                eventTime: '02/02/2012',
-                eventLocation: 'Google',
-                eventShortDescription: 'Senior Developer',
-                eventDescription: 'Working as a senior developer'
+                eventTime: '05/2017 - 05/2018',
+                eventLocation: 'Transcosmos Co.,Ltd',
+                eventShortDescription: 'Front-end Developer',
+                eventDescription: 
+`
+* Working as a Coder:
+- Convert PSD to HTML/CSS and ensure it is Perfect Pixel.
+- Make Website compatible with most browsers and devices.
+- Collaborate with other members and designers to produce a high quality Webpage.
+
+* Skills gained: 
+- Responsibility and Discipline.
+- Work in Japanese Style.
+`
             },
             {
-                eventTime: '02/02/2012',
-                eventLocation: 'Facebook',
-                eventShortDescription: 'TA',
-                eventDescription: 'Working as a technical architech'
+                eventTime: '02/2017 - 04/2017',
+                eventLocation: 'Saigon Hitech',
+                eventShortDescription: 'Coder',
+                eventDescription: 
+`
+* Working as an inter:
+- Convert PSD to HTML/CSS.
+- Fix bugs related to Front-end UI.
+`
             }
         ];
 
@@ -49,7 +79,7 @@ class EventsPage extends React.Component {
                                                 </div>
                                             </div>
                                             <div className='event-body'>
-                                                <p>{item.eventShortDescription}</p>
+                                                <pre>{item.eventDescription}</pre>
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +109,7 @@ class EventsPage extends React.Component {
                                                 </div>
                                             </div>
                                             <div className='event-body'>
-                                                <p>{item.eventShortDescription}</p>
+                                                <pre>{item.eventDescription}</pre>
                                             </div>
                                         </div>
                                     </div>
