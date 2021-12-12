@@ -7,7 +7,25 @@ class EventsPage extends React.Component {
     render(){
         const events = [
             {
-                eventTime: '05/2018 - Present',
+                eventTime: '08/2019 - Present',
+                eventLocation: 'NAB Studio',
+                eventShortDescription: 'Front-end Developer',
+                eventDescription: 
+`
+* Main responsibilities:
+- Mainly build internal tools for image editing.
+- Support mobile team in mobile-web integration.
+- Prepare some simple Back-end APIs.
+- Implement UI features based on requirement.
+- Write technical documents.
+
+* Skills gained:
+- Learn various modern technical knowledge.
+- Deeper web understandings
+`
+            },
+            {
+                eventTime: '06/2018 - 07/2019',
                 eventLocation: 'DXC Technology',
                 eventShortDescription: 'Front-end Developer',
                 eventDescription: 
@@ -28,7 +46,7 @@ class EventsPage extends React.Component {
 `
             },
             {
-                eventTime: '05/2017 - 05/2018',
+                eventTime: '06/2017 - 06/2018',
                 eventLocation: 'Transcosmos Co.,Ltd',
                 eventShortDescription: 'Front-end Developer',
                 eventDescription: 
@@ -43,17 +61,6 @@ class EventsPage extends React.Component {
 - Work in Japanese Style.
 `
             },
-            {
-                eventTime: '02/2017 - 04/2017',
-                eventLocation: 'Saigon Hitech',
-                eventShortDescription: 'Coder',
-                eventDescription: 
-`
-* Working as an inter:
-- Convert PSD to HTML/CSS.
-- Fix bugs related to Front-end UI.
-`
-            }
         ];
 
         return(
